@@ -1,10 +1,12 @@
 import sql from "mssql";
 import {
+  changeTrackingChangesQuery,
   changeTrackingCurrentVersionQuery,
   changeTrackingDbEnableQuery,
   changeTrackingDbStatusQuery,
-  changeTrackingMinValidVersionQueryByTableId,
-  changeTrackingMinValidVersionQueryByTableName,
+  changeTrackingGrantAccessQuery,
+  changeTrackingMinValidVersionByTableIdQuery,
+  changeTrackingMinValidVersionByTableNameQuery,
 } from "./sql-queries/change-tracking";
 
 interface Base {
@@ -97,13 +99,41 @@ export async function ctMinValidVersion(input: CtMinValidVersion) {
     return input.pool
       .request()
       .input("tableId", sql.Int, input.tableId)
-      .query(changeTrackingMinValidVersionQueryByTableId)
+      .query(changeTrackingMinValidVersionByTableIdQuery)
       .then((result) => result.recordset);
   } else {
     return input.pool
       .request()
       .input("tableName", sql.VarChar(30), input.tableName) // VARCHAR(30) is equivalent of sysname SOURCE: https://stackoverflow.com/questions/5720212/what-is-sysname-data-type-in-sql-server
-      .query(changeTrackingMinValidVersionQueryByTableName)
+      .query(changeTrackingMinValidVersionByTableNameQuery)
       .then((result) => result.recordset);
   }
+}
+
+interface CtChanges extends Base {
+  sinceVersion: string;
+  tableName: string;
+}
+export async function ctChanges({ pool, sinceVersion, tableName }: CtChanges) {
+  // TODO return types!
+  return pool
+    .request()
+    .input("version_number", sql.BigInt, sinceVersion)
+    .query(changeTrackingChangesQuery(tableName))
+    .then((result) => result.recordset);
+}
+
+interface CtGrantAccess extends Base {
+  userName: string;
+  tableName: string;
+}
+export async function ctGrantAccess({
+  pool,
+  userName,
+  tableName,
+}: CtGrantAccess) {
+  return pool
+    .request()
+    .query(changeTrackingGrantAccessQuery({ tableName, userName }))
+    .then((result) => result.recordset);
 }
