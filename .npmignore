@@ -1,0 +1,10 @@
+.npmrc
+.env
+*.log
+docs
+generated
+/src/**/*.*
+/compile/**
+/obfuscated/**/*.*
+/dist/**/*.*
+/release/**/*.*
