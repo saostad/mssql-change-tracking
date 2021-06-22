@@ -114,6 +114,7 @@ interface CtChanges extends Base {
   sinceVersion: string;
   tableName: string;
 }
+/** @returns changes since specific version number */
 export async function ctChanges({ pool, sinceVersion, tableName }: CtChanges) {
   // TODO return types!
   return pool
@@ -127,6 +128,7 @@ interface CtGrantAccess extends Base {
   userName: string;
   tableName: string;
 }
+/** grant access to change tracking data for specific table to specific user */
 export async function ctGrantAccess({
   pool,
   userName,
