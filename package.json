@@ -1,6 +1,6 @@
 {
-  "name": "create-ts-starter",
-  "version": "4.1.0",
+  "name": "mssql-change-tracking",
+  "version": "0.0.1",
   "description": "Production ready starter for typescript node project",
   "type": "module",
   "repository": {
