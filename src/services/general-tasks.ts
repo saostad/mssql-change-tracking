@@ -8,7 +8,10 @@ interface Base {
 interface GetPrimaryKeys extends Base {
   tableName: string;
 }
-export async function getPrimaryKeys({ pool, tableName }: GetPrimaryKeys) {
+export async function getPrimaryKeys({
+  pool,
+  tableName,
+}: GetPrimaryKeys): Promise<string[]> {
   return pool
     .request()
     .query(primaryKeysQuery(tableName))

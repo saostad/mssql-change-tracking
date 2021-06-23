@@ -17,13 +17,23 @@ interface Base {
 interface IGetDbStatus extends Base {
   dbName: string;
 }
-export async function getDbStatus({ dbName, pool }: IGetDbStatus) {
-  //TODO type the return rows
+type GetDbStatusOut = {
+  db_name: string;
+  database_id: number;
+  is_auto_cleanup_on: number;
+  retention_period: number;
+  retention_period_units: number;
+  retention_period_units_desc: string;
+  max_cleanup_version: null | string;
+};
+export async function getDbStatus({
+  dbName,
+  pool,
+}: IGetDbStatus): Promise<GetDbStatusOut> {
   return pool
     .request()
-    .input("dbName", sql.NVarChar, dbName)
-    .query(changeTrackingDbStatusQuery)
-    .then((result) => result.recordset);
+    .query<GetDbStatusOut>(changeTrackingDbStatusQuery(dbName))
+    .then((result) => result.recordset[0]);
 }
 
 interface DbLevelOp extends Base {
@@ -48,8 +58,6 @@ export async function ctDbEnable({
 }: DbLevelOp) {
   return pool
     .request()
-    .input("dbName", sql.NVarChar, dbName)
-    .input("retentionDayNumber", sql.Int, retentionDayNumber)
     .query(changeTrackingDbEnableQuery) // FIXME this is not working
     .then((result) => result.recordset);
 }
@@ -94,20 +102,24 @@ interface MinValidVersionByTableId extends Base {
 type CtMinValidVersion = MinValidVersionByTableName | MinValidVersionByTableId;
 
 /** @note this function accept table name or table ID */
-export async function ctMinValidVersion(input: CtMinValidVersion) {
+export async function ctMinValidVersion(
+  input: CtMinValidVersion,
+): Promise<string | null> {
   //TODO type the return rows
   if (input.tableId) {
     return input.pool
       .request()
       .input("tableId", sql.Int, input.tableId)
       .query(changeTrackingMinValidVersionByTableIdQuery)
-      .then((result) => result.recordset);
+      .then((result) => result.recordset)
+      .then((row) => row[0]["min_valid_version"]);
   } else {
     return input.pool
       .request()
       .input("tableName", sql.VarChar(30), input.tableName) // VARCHAR(30) is equivalent of sysname SOURCE: https://stackoverflow.com/questions/5720212/what-is-sysname-data-type-in-sql-server
       .query(changeTrackingMinValidVersionByTableNameQuery)
-      .then((result) => result.recordset);
+      .then((result) => result.recordset)
+      .then((row) => row[0]["min_valid_version"]);
   }
 }
 

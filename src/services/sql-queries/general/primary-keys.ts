@@ -1,5 +1,5 @@
-export function primaryKeysQuery(tableName: string) {
-  return `SELECT Col.Column_Name from 
+export function primaryKeysQuery(tableName: string): string {
+  return `SELECT Col.Column_Name FROM 
   INFORMATION_SCHEMA.TABLE_CONSTRAINTS Tab, 
   INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE Col 
   WHERE 

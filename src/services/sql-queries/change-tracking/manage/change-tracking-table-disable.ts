@@ -1,3 +1,21 @@
-/**@param "@tableName" */
-export const changeTrackingTableDisableQuery = `ALTER TABLE @tableName  
-DISABLE CHANGE_TRACKING;`;
+type Input = {
+  schema?: string;
+  dbName?: string;
+  tableName: string;
+};
+export function changeTrackingTableDisableQuery({
+  tableName,
+  dbName,
+  schema,
+}: Input): string {
+  let tableFullPath = `[${tableName}]`;
+  if (dbName) {
+    tableFullPath = `[${dbName}].[${tableName}]`;
+  }
+  if (schema && dbName) {
+    tableFullPath = `[${schema}].[${dbName}].[${tableName}]`;
+  }
+
+  return `ALTER TABLE ${tableFullPath} 
+  DISABLE CHANGE_TRACKING;`;
+}

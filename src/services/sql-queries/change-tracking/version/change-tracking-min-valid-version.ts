@@ -1,9 +1,26 @@
-/** @param "@tableName" */
-export const changeTrackingMinValidVersionByTableNameQuery = `
-SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID(@tableName)) AS min_valid_version
-`;
+type Input = {
+  schema?: string;
+  dbName?: string;
+  tableName: string;
+};
+export function changeTrackingMinValidVersionByTableNameQuery({
+  tableName,
+  dbName,
+  schema,
+}: Input): string {
+  let tableFullPath = `[${tableName}]`;
+  if (dbName) {
+    tableFullPath = `[${dbName}].[${tableName}]`;
+  }
+  if (schema && dbName) {
+    tableFullPath = `[${schema}].[${dbName}].[${tableName}]`;
+  }
 
-/** @param "@tableId" */
-export const changeTrackingMinValidVersionByTableIdQuery = `
-SELECT CHANGE_TRACKING_MIN_VALID_VERSION(@tableId) AS min_valid_version
-`;
+  return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID(${tableFullPath})) AS min_valid_version`;
+}
+
+export function changeTrackingMinValidVersionByTableIdQuery(
+  tableId: string,
+): string {
+  return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(${tableId}) AS min_valid_version`;
+}
