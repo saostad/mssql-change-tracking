@@ -1,13 +1,31 @@
-type Input = {
+import sql from "mssql";
+
+type CtTableDisableInput = QueryInput & {
+  pool: sql.ConnectionPool;
+};
+
+/** Disable change tracking in Table level */
+export async function ctTableDisable({
+  tableName,
+  dbName,
+  schema,
+  pool,
+}: CtTableDisableInput): Promise<void> {
+  await pool
+    .request()
+    .query(changeTrackingTableDisableQuery({ schema, dbName, tableName }));
+}
+
+type QueryInput = {
   schema?: string;
   dbName?: string;
   tableName: string;
 };
-export function changeTrackingTableDisableQuery({
+function changeTrackingTableDisableQuery({
   tableName,
   dbName,
   schema,
-}: Input): string {
+}: QueryInput): string {
   let tableFullPath = `[${tableName}]`;
   if (dbName) {
     tableFullPath = `[${dbName}].[${tableName}]`;
