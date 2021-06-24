@@ -9,19 +9,19 @@ type CtChangesOutput = {
   [primaryKey: string]: any;
 };
 
-interface CtChanges extends QueryInput {
+interface CtChangesInput extends QueryInput {
   pool: sql.ConnectionPool;
   sinceVersion: string;
   tableName: string;
 }
 /** @returns changes since specific version number */
-export async function ctChanges({
+export async function ctChanges<PrimaryKeys>({
   pool,
   sinceVersion,
   tableName,
   dbName,
   schema,
-}: CtChanges): Promise<CtChangesOutput[]> {
+}: CtChangesInput): Promise<Array<CtChangesOutput & PrimaryKeys>> {
   return pool
     .request()
     .query(

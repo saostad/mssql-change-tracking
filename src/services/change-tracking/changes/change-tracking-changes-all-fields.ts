@@ -1,10 +1,10 @@
 import sql from "mssql";
 
-type ChangeTrackingChangesAllFieldsInput = QueryInput & {
+type CtChangesAllFieldsInput = QueryInput & {
   pool: sql.ConnectionPool;
 };
 
-type ChangeTrackingChangesAllFieldsOutput = {
+type CtChangesAllFieldsOutput = {
   SYS_CHANGE_VERSION: string;
   SYS_CHANGE_CREATION_VERSION: string;
   SYS_CHANGE_OPERATION: "I" | "U" | "D";
@@ -14,13 +14,13 @@ type ChangeTrackingChangesAllFieldsOutput = {
 };
 
 /** @returns changes since specific version number including target table fields */
-export async function ctChangesAllFields({
+export async function ctChangesAllFields<TargetTableFields>({
   pool,
   sinceVersion,
   tableName,
   primaryKeys,
-}: ChangeTrackingChangesAllFieldsInput): Promise<
-  ChangeTrackingChangesAllFieldsOutput[]
+}: CtChangesAllFieldsInput): Promise<
+  Array<CtChangesAllFieldsOutput & TargetTableFields>
 > {
   return pool
     .request()

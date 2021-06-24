@@ -16,7 +16,7 @@ type GetDbStatusOut = {
   retention_period_units_desc: string;
   max_cleanup_version: null | string;
 };
-export async function getDbStatus({
+export async function ctDbStatus({
   dbName,
   pool,
 }: IGetDbStatus): Promise<GetDbStatusOut | undefined> {

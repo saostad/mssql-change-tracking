@@ -1,18 +1,16 @@
 import sql from "mssql";
 
-interface Base {
+interface MinValidVersionByTableName {
   pool: sql.ConnectionPool;
-}
-
-interface MinValidVersionByTableName extends Base {
   dbName?: string;
   schema?: string;
   tableName: string;
   tableId?: never;
 }
-interface MinValidVersionByTableId extends Base {
+interface MinValidVersionByTableId {
+  pool: sql.ConnectionPool;
   tableId: string;
-  dbName?: never;
+  dbName?: string;
   schema?: never;
   tableName?: never;
 }
@@ -25,7 +23,12 @@ export async function ctMinValidVersion(
   if (input.tableId) {
     return input.pool
       .request()
-      .query(changeTrackingMinValidVersionByTableIdQuery(input.tableId))
+      .query(
+        changeTrackingMinValidVersionByTableIdQuery({
+          tableId: input.tableId,
+          dbName: input.dbName,
+        }),
+      )
       .then((result) => result.recordset)
       .then((row) => row[0]["min_valid_version"]);
   } else if (input.tableName) {
@@ -45,7 +48,7 @@ export async function ctMinValidVersion(
   }
 }
 
-type QueryInput = {
+type TableNameQueryInput = {
   schema?: string;
   dbName?: string;
   tableName: string;
@@ -54,7 +57,7 @@ function changeTrackingMinValidVersionByTableNameQuery({
   tableName,
   dbName,
   schema,
-}: QueryInput): string {
+}: TableNameQueryInput): string {
   let tableFullPath = `[${tableName}]`;
   if (dbName) {
     tableFullPath = `[${dbName}].[${tableName}]`;
@@ -66,6 +69,19 @@ function changeTrackingMinValidVersionByTableNameQuery({
   return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID('${tableFullPath}')) AS min_valid_version`;
 }
 
-function changeTrackingMinValidVersionByTableIdQuery(tableId: string): string {
-  return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(${tableId}) AS min_valid_version`;
+type TableIdQueryInput = {
+  tableId: string;
+  dbName?: string;
+};
+function changeTrackingMinValidVersionByTableIdQuery({
+  dbName,
+  tableId,
+}: TableIdQueryInput): string {
+  let query = `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(${tableId}) AS min_valid_version`;
+
+  if (dbName) {
+    query = `USE [${dbName}]; `.concat(query);
+  }
+
+  return query;
 }
