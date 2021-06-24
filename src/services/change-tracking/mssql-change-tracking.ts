@@ -4,52 +4,27 @@ interface Base {
   pool: sql.ConnectionPool;
 }
 
-// interface DbLevelOp extends Base {
-//   dbName: string;
-//   retentionDayNumber: number;
-//   /**
-//    * @description if true before try to enable th flag will check to make sure it's not on
-//    * @default true
-//    */
-//   safeRun?: boolean; // TODO: implement this flag
-// }
-
-// /** Enable change tracking in DB level
-//  * @return change tracking status
-//  */
-// export async function ctDbEnable({
-//   //TODO type the return rows
-//   pool,
-//   dbName,
-//   retentionDayNumber,
-//   safeRun,
-// }: DbLevelOp) {
-//   return pool
-//     .request()
-//     .query(changeTrackingDbEnableQuery) // FIXME this is not working
-//     .then((result) => result.recordset);
-// }
-// /** Disable change tracking in DB level
-//  * @return change tracking status
-//  */
-// export async function ctDbDisable() {
-//   //TODO type the return rows
-//   // TODO
-// }
-// /** Enable change tracking in Table level
-//  * @return change tracking status
-//  */
-// export async function ctTableEnable() {
-//   //TODO type the return rows
-//   // TODO
-// }
-// /** Disable change tracking in Table level
-//  * @return change tracking status
-//  */
-// export async function ctTableDisable() {
-//   //TODO type the return rows
-//   // TODO
-// }
+/** Disable change tracking in DB level
+ * @return change tracking status
+ */
+export async function ctDbDisable() {
+  //TODO type the return rows
+  // TODO
+}
+/** Enable change tracking in Table level
+ * @return change tracking status
+ */
+export async function ctTableEnable() {
+  //TODO type the return rows
+  // TODO
+}
+/** Disable change tracking in Table level
+ * @return change tracking status
+ */
+export async function ctTableDisable() {
+  //TODO type the return rows
+  // TODO
+}
 
 // export async function ctCurrentVersion({ pool }: Base) {
 //   //TODO type the return rows
