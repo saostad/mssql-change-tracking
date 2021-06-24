@@ -5,9 +5,7 @@ type CtDbDisable = {
   dbName: string;
 };
 
-/** Disable change tracking in DB level
- * @return change tracking status
- */
+/** Disable change tracking in DB level */
 export async function ctDbDisable({
   dbName,
   pool,

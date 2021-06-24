@@ -1,4 +1,30 @@
-type Input = {
+import sql from "mssql";
+
+type CtTableEnableInput = QueryInput & {
+  pool: sql.ConnectionPool;
+};
+
+/** Enable change tracking in Table level */
+export async function ctTableEnable({
+  pool,
+  tableName,
+  dbName,
+  schema,
+  trackColumnsUpdated,
+}: CtTableEnableInput): Promise<void> {
+  await pool
+    .request()
+    .query(
+      changeTrackingTableEnableQuery({
+        trackColumnsUpdated,
+        schema,
+        dbName,
+        tableName,
+      }),
+    );
+}
+
+type QueryInput = {
   schema?: string;
   dbName?: string;
   tableName: string;
@@ -8,12 +34,12 @@ type Input = {
   trackColumnsUpdated?: "ON" | "OFF";
 };
 
-export function changeTrackingTableEnableQuery({
+function changeTrackingTableEnableQuery({
   schema,
   dbName,
   tableName,
   trackColumnsUpdated,
-}: Input): string {
+}: QueryInput): string {
   let tableFullPath = `[${tableName}]`;
   if (dbName) {
     tableFullPath = `[${dbName}].[${tableName}]`;

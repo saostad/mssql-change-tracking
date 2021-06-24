@@ -4,20 +4,6 @@ interface Base {
   pool: sql.ConnectionPool;
 }
 
-/** Disable change tracking in DB level
- * @return change tracking status
- */
-export async function ctDbDisable() {
-  //TODO type the return rows
-  // TODO
-}
-/** Enable change tracking in Table level
- * @return change tracking status
- */
-export async function ctTableEnable() {
-  //TODO type the return rows
-  // TODO
-}
 /** Disable change tracking in Table level
  * @return change tracking status
  */
