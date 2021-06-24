@@ -6,8 +6,7 @@ type CtChangesOutput = {
   SYS_CHANGE_OPERATION: "I" | "U" | "D";
   SYS_CHANGE_COLUMNS: null | string;
   SYS_CHANGE_CONTEXT: null | string;
-  // KeyID: "3690";
-  // TODO add primary keys as part of result.
+  [primaryKey: string]: any;
 };
 
 interface CtChanges extends QueryInput {
@@ -22,7 +21,7 @@ export async function ctChanges({
   tableName,
   dbName,
   schema,
-}: CtChanges) {
+}: CtChanges): Promise<CtChangesOutput[]> {
   return pool
     .request()
     .query(
