@@ -15,7 +15,7 @@ export function changeTrackingGrantAccessQuery({
     tableFullPath = `[${dbName}].[${tableName}]`;
   }
   if (schema && dbName) {
-    tableFullPath = `[${schema}].[${dbName}].[${tableName}]`;
+    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
   }
 
   return `GRANT VIEW CHANGE TRACKING ON ${tableFullPath} TO ${userName}`;

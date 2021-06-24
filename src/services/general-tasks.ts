@@ -1,5 +1,5 @@
 import sql from "mssql";
-import { primaryKeysQuery } from "./sql-queries/general/primary-keys";
+import { primaryKeysQuery } from "../sql-queries/general/primary-keys";
 
 interface Base {
   pool: sql.ConnectionPool;

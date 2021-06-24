@@ -19,7 +19,7 @@ export function changeTrackingChangesQuery({
     tableFullPath = `[${dbName}].[${tableName}]`;
   }
   if (schema && dbName) {
-    tableFullPath = `[${schema}].[${dbName}].[${tableName}]`;
+    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
   }
 
   return `SELECT * FROM CHANGETABLE (CHANGES ${tableFullPath}, '${sinceVersion}') AS ct`;

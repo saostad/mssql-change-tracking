@@ -1,2 +1,1 @@
-export * from "./services/mssql-change-tracking";
-export * from "./services/general-tasks";
+export * from "./services/operations/index";

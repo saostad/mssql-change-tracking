@@ -19,7 +19,7 @@ export function changeTrackingTableEnableQuery({
     tableFullPath = `[${dbName}].[${tableName}]`;
   }
   if (schema && dbName) {
-    tableFullPath = `[${schema}].[${dbName}].[${tableName}]`;
+    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
   }
 
   let query = `ALTER TABLE ${tableFullPath}  

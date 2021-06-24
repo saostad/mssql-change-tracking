@@ -13,7 +13,7 @@ export function changeTrackingTableDisableQuery({
     tableFullPath = `[${dbName}].[${tableName}]`;
   }
   if (schema && dbName) {
-    tableFullPath = `[${schema}].[${dbName}].[${tableName}]`;
+    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
   }
 
   return `ALTER TABLE ${tableFullPath} 

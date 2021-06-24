@@ -13,7 +13,7 @@ export function changeTrackingMinValidVersionByTableNameQuery({
     tableFullPath = `[${dbName}].[${tableName}]`;
   }
   if (schema && dbName) {
-    tableFullPath = `[${schema}].[${dbName}].[${tableName}]`;
+    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
   }
 
   return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID(${tableFullPath})) AS min_valid_version`;
