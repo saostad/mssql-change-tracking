@@ -28,7 +28,7 @@ type GetDbStatusOut = {
 export async function getDbStatus({
   dbName,
   pool,
-}: IGetDbStatus): Promise<GetDbStatusOut> {
+}: IGetDbStatus): Promise<GetDbStatusOut | undefined> {
   return pool
     .request()
     .query<GetDbStatusOut>(changeTrackingDbStatusQuery(dbName))
