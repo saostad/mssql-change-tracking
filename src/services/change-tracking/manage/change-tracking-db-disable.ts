@@ -1,4 +1,5 @@
 import sql from "mssql";
+import { ctDbStatus } from "./change-tracking-db-status";
 
 type CtDbDisable = {
   pool: sql.ConnectionPool;
@@ -9,8 +10,9 @@ type CtDbDisable = {
 export async function ctDbDisable({
   dbName,
   pool,
-}: CtDbDisable): Promise<void> {
+}: CtDbDisable): ReturnType<typeof ctDbStatus> {
   await pool.request().query(changeTrackingDbDisableQuery(dbName));
+  return ctDbStatus({ pool, dbName });
 }
 
 function changeTrackingDbDisableQuery(dbName: string): string {

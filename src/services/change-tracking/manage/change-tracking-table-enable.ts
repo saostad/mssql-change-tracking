@@ -1,4 +1,5 @@
 import sql from "mssql";
+import { ctTablesStatus } from "./change-tracking-table-status";
 
 type CtTableEnableInput = QueryInput & {
   pool: sql.ConnectionPool;
@@ -11,17 +12,17 @@ export async function ctTableEnable({
   dbName,
   schema,
   trackColumnsUpdated,
-}: CtTableEnableInput): Promise<void> {
-  await pool
-    .request()
-    .query(
-      changeTrackingTableEnableQuery({
-        trackColumnsUpdated,
-        schema,
-        dbName,
-        tableName,
-      }),
-    );
+}: CtTableEnableInput): ReturnType<typeof ctTablesStatus> {
+  await pool.request().query(
+    changeTrackingTableEnableQuery({
+      trackColumnsUpdated,
+      schema,
+      dbName,
+      tableName,
+    }),
+  );
+
+  return ctTablesStatus({ dbName, pool });
 }
 
 type QueryInput = {

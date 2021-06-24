@@ -13,7 +13,7 @@ type GetTablesStatusOut = {
   begin_version: bigint;
   cleanup_version: bigint;
 };
-export async function getTablesStatus({
+export async function ctTablesStatus({
   pool,
   dbName,
 }: IGetDbStatus): Promise<GetTablesStatusOut[]> {

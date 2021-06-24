@@ -1,4 +1,5 @@
 import sql from "mssql";
+import { ctDbStatus } from "./change-tracking-db-status";
 
 type RetentionPeriodUnit = "MINUTES" | "HOURS" | "DAYS";
 
@@ -17,18 +18,17 @@ export async function ctDbEnable({
   autoCleanup,
   retentionDayNumber,
   retentionPeriodUnit,
-}: CtDbEnableInput): Promise<void> {
-  await pool
-    .request()
-    .query(
-      changeTrackingDbEnableQuery({
-        dbName,
-        autoCleanup,
-        retentionDayNumber,
-        retentionPeriodUnit,
-      }),
-    )
-    .then((result) => result.recordset);
+}: CtDbEnableInput): ReturnType<typeof ctDbStatus> {
+  await pool.request().query(
+    changeTrackingDbEnableQuery({
+      dbName,
+      autoCleanup,
+      retentionDayNumber,
+      retentionPeriodUnit,
+    }),
+  );
+
+  return ctDbStatus({ pool, dbName });
 }
 
 type QueryInput = {

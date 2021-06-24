@@ -1,5 +1,5 @@
 import sql from "mssql";
-
+import { ctTablesStatus } from "./change-tracking-table-status";
 type CtTableDisableInput = QueryInput & {
   pool: sql.ConnectionPool;
 };
@@ -10,10 +10,12 @@ export async function ctTableDisable({
   dbName,
   schema,
   pool,
-}: CtTableDisableInput): Promise<void> {
+}: CtTableDisableInput): ReturnType<typeof ctTablesStatus> {
   await pool
     .request()
     .query(changeTrackingTableDisableQuery({ schema, dbName, tableName }));
+
+  return ctTablesStatus({ dbName, pool });
 }
 
 type QueryInput = {
