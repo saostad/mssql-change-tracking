@@ -22,7 +22,6 @@ type CtMinValidVersion = MinValidVersionByTableName | MinValidVersionByTableId;
 export async function ctMinValidVersion(
   input: CtMinValidVersion,
 ): Promise<string | null> {
-  //TODO type the return rows
   if (input.tableId) {
     return input.pool
       .request()
@@ -64,7 +63,7 @@ function changeTrackingMinValidVersionByTableNameQuery({
     tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
   }
 
-  return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID(${tableFullPath})) AS min_valid_version`;
+  return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID('${tableFullPath}')) AS min_valid_version`;
 }
 
 export function changeTrackingMinValidVersionByTableIdQuery(
