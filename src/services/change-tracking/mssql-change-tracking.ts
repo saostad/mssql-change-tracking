@@ -4,22 +4,6 @@ interface Base {
   pool: sql.ConnectionPool;
 }
 
-/** Disable change tracking in Table level
- * @return change tracking status
- */
-export async function ctTableDisable() {
-  //TODO type the return rows
-  // TODO
-}
-
-// export async function ctCurrentVersion({ pool }: Base) {
-//   //TODO type the return rows
-//   return pool
-//     .request()
-//     .query(changeTrackingCurrentVersionQuery)
-//     .then((result) => result.recordset);
-// }
-
 // interface MinValidVersionByTableName extends Base {
 //   tableName: string;
 //   tableId?: never;
