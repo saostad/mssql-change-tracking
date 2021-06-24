@@ -37,7 +37,7 @@ type QueryInput = {
   retentionDayNumber: number;
   retentionPeriodUnit: RetentionPeriodUnit;
 };
-export function changeTrackingDbEnableQuery({
+function changeTrackingDbEnableQuery({
   dbName,
   autoCleanup,
   retentionDayNumber,

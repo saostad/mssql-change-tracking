@@ -66,8 +66,6 @@ function changeTrackingMinValidVersionByTableNameQuery({
   return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID('${tableFullPath}')) AS min_valid_version`;
 }
 
-export function changeTrackingMinValidVersionByTableIdQuery(
-  tableId: string,
-): string {
+function changeTrackingMinValidVersionByTableIdQuery(tableId: string): string {
   return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(${tableId}) AS min_valid_version`;
 }

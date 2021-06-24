@@ -14,7 +14,7 @@ type ChangeTrackingChangesAllFieldsOutput = {
 };
 
 /** @returns changes since specific version number including target table fields */
-export async function changeTrackingChangesAllFields({
+export async function ctChangesAllFields({
   pool,
   sinceVersion,
   tableName,
@@ -41,7 +41,7 @@ type QueryInput = {
   primaryKeys: string[];
   sinceVersion: string;
 };
-export function changeTrackingChangesAllFieldsQuery({
+function changeTrackingChangesAllFieldsQuery({
   schema,
   dbName,
   tableName,
