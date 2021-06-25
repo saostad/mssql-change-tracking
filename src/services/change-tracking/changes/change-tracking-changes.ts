@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 
 type CtChangesOutput = {
@@ -22,6 +23,8 @@ export async function ctChanges<PrimaryKeys>({
   dbName,
   schema,
 }: CtChangesInput): Promise<Array<CtChangesOutput & PrimaryKeys>> {
+  writeLog(`ctChanges`, { level: "trace" });
+
   return pool
     .request()
     .query(

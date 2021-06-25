@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 
 type CtCurrentVersionInput = {
@@ -9,6 +10,8 @@ export async function ctCurrentVersion({
   pool,
   dbName,
 }: CtCurrentVersionInput): Promise<string> {
+  writeLog(`ctCurrentVersion`, { level: "trace" });
+
   return pool
     .request()
     .query(changeTrackingCurrentVersionQuery(dbName))

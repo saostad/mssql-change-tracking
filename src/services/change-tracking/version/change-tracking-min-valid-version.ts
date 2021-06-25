@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 
 interface MinValidVersionByTableName {
@@ -20,6 +21,8 @@ type CtMinValidVersion = MinValidVersionByTableName | MinValidVersionByTableId;
 export async function ctMinValidVersion(
   input: CtMinValidVersion,
 ): Promise<string | null> {
+  writeLog(`ctMinValidVersion`, { level: "trace" });
+
   if (input.tableId) {
     return input.pool
       .request()

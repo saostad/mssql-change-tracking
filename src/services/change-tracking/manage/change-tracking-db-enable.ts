@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 import { ctDbStatus } from "./change-tracking-db-status";
 
@@ -19,6 +20,8 @@ export async function ctDbEnable({
   retentionDayNumber,
   retentionPeriodUnit,
 }: CtDbEnableInput): ReturnType<typeof ctDbStatus> {
+  writeLog(`ctDbEnable`, { level: "trace" });
+
   await pool.request().query(
     changeTrackingDbEnableQuery({
       dbName,

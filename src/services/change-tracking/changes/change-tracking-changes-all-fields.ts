@@ -1,4 +1,5 @@
 import sql from "mssql";
+import { writeLog } from "fast-node-logger";
 
 type CtChangesAllFieldsInput = QueryInput & {
   pool: sql.ConnectionPool;
@@ -22,6 +23,7 @@ export async function ctChangesAllFields<TargetTableFields>({
 }: CtChangesAllFieldsInput): Promise<
   Array<CtChangesAllFieldsOutput & TargetTableFields>
 > {
+  writeLog(`ctChangesAllFields`, { level: "trace" });
   return pool
     .request()
     .query(

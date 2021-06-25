@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 import { ctTablesStatus } from "./change-tracking-table-status";
 
@@ -13,6 +14,8 @@ export async function ctTableEnable({
   schema,
   trackColumnsUpdated,
 }: CtTableEnableInput): ReturnType<typeof ctTablesStatus> {
+  writeLog(`ctTableEnable`, { level: "trace" });
+
   await pool.request().query(
     changeTrackingTableEnableQuery({
       trackColumnsUpdated,

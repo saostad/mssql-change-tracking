@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 
 type CtGrantAccess = QueryInput & {
@@ -12,6 +13,8 @@ export async function ctGrantAccess({
   dbName,
   schema,
 }: CtGrantAccess): Promise<void> {
+  writeLog(`ctGrantAccess`, { level: "trace" });
+
   await pool
     .request()
     .query(

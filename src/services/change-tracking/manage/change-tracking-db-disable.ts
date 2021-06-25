@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 import { ctDbStatus } from "./change-tracking-db-status";
 
@@ -11,6 +12,8 @@ export async function ctDbDisable({
   dbName,
   pool,
 }: CtDbDisable): ReturnType<typeof ctDbStatus> {
+  writeLog(`ctDbDisable`, { level: "trace" });
+
   await pool.request().query(changeTrackingDbDisableQuery(dbName));
   return ctDbStatus({ pool, dbName });
 }

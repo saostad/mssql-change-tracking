@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 
 interface IGetDbStatus {
@@ -17,6 +18,8 @@ export async function ctTablesStatus({
   pool,
   dbName,
 }: IGetDbStatus): Promise<GetTablesStatusOut[]> {
+  writeLog(`ctTablesStatus`, { level: "trace" });
+
   return pool
     .request()
     .query(changeTrackingTablesStatusQuery(dbName))
