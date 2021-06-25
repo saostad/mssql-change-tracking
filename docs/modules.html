@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>create-ts-starter</title>
-	<meta name="description" content="Documentation for create-ts-starter">
+	<title>mssql-change-tracking</title>
+	<meta name="description" content="Documentation for mssql-change-tracking">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script async src="assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">create-ts-starter</a>
+					<a href="index.html" class="title">mssql-change-tracking</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -50,13 +50,362 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>create-ts-starter</h1>
+			<h1>mssql-change-tracking</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#ctchanges" class="tsd-kind-icon">ct<wbr>Changes</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#ctchangesallfields" class="tsd-kind-icon">ct<wbr>Changes<wbr>All<wbr>Fields</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#ctcurrentversion" class="tsd-kind-icon">ct<wbr>Current<wbr>Version</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#ctdbdisable" class="tsd-kind-icon">ct<wbr>DbDisable</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#ctdbenable" class="tsd-kind-icon">ct<wbr>DbEnable</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#ctdbstatus" class="tsd-kind-icon">ct<wbr>DbStatus</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#ctgrantaccess" class="tsd-kind-icon">ct<wbr>Grant<wbr>Access</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#ctminvalidversion" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#cttabledisable" class="tsd-kind-icon">ct<wbr>Table<wbr>Disable</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#cttableenable" class="tsd-kind-icon">ct<wbr>Table<wbr>Enable</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#cttablesstatus" class="tsd-kind-icon">ct<wbr>Tables<wbr>Status</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#getprimarykeys" class="tsd-kind-icon">get<wbr>Primary<wbr>Keys</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="ctchanges" class="tsd-anchor"></a>
+					<h3>ct<wbr>Changes</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Changes&lt;PrimaryKeys&gt;<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtChangesInput</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">CtChangesOutput</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">PrimaryKeys</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/changes/change-tracking-changes.ts#L19">services/change-tracking/changes/change-tracking-changes.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>PrimaryKeys</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtChangesInput</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">CtChangesOutput</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">PrimaryKeys</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>changes since specific version number</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="ctchangesallfields" class="tsd-anchor"></a>
+					<h3>ct<wbr>Changes<wbr>All<wbr>Fields</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Changes<wbr>All<wbr>Fields&lt;TargetTableFields&gt;<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtChangesAllFieldsInput</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">CtChangesAllFieldsOutput</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">TargetTableFields</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/changes/change-tracking-changes-all-fields.ts#L18">services/change-tracking/changes/change-tracking-changes-all-fields.ts:18</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>TargetTableFields</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtChangesAllFieldsInput</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">CtChangesAllFieldsOutput</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">TargetTableFields</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>changes since specific version number including target table fields</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="ctcurrentversion" class="tsd-anchor"></a>
+					<h3>ct<wbr>Current<wbr>Version</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Current<wbr>Version<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtCurrentVersionInput</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/version/change-tracking-current-version.ts#L9">services/change-tracking/version/change-tracking-current-version.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtCurrentVersionInput</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="ctdbdisable" class="tsd-anchor"></a>
+					<h3>ct<wbr>DbDisable</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>DbDisable<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtDbDisable</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="modules.html#ctdbstatus" class="tsd-signature-type" data-tsd-kind="Function">ctDbStatus</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/manage/change-tracking-db-disable.ts#L11">services/change-tracking/manage/change-tracking-db-disable.ts:11</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Disable change tracking in DB level</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtDbDisable</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="modules.html#ctdbstatus" class="tsd-signature-type" data-tsd-kind="Function">ctDbStatus</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="ctdbenable" class="tsd-anchor"></a>
+					<h3>ct<wbr>DbEnable</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>DbEnable<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtDbEnableInput</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="modules.html#ctdbstatus" class="tsd-signature-type" data-tsd-kind="Function">ctDbStatus</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/manage/change-tracking-db-enable.ts#L16">services/change-tracking/manage/change-tracking-db-enable.ts:16</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enable change tracking in DB level</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtDbEnableInput</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="modules.html#ctdbstatus" class="tsd-signature-type" data-tsd-kind="Function">ctDbStatus</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="ctdbstatus" class="tsd-anchor"></a>
+					<h3>ct<wbr>DbStatus</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>DbStatus<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IGetDbStatus</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">GetDbStatusOut</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/manage/change-tracking-db-status.ts#L20">services/change-tracking/manage/change-tracking-db-status.ts:20</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">IGetDbStatus</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">GetDbStatusOut</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="ctgrantaccess" class="tsd-anchor"></a>
+					<h3>ct<wbr>Grant<wbr>Access</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Grant<wbr>Access<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtGrantAccess</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/manage/change-tracking-grant-access.ts#L9">services/change-tracking/manage/change-tracking-grant-access.ts:9</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>grant access to change tracking data for specific table to specific user</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtGrantAccess</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="ctminvalidversion" class="tsd-anchor"></a>
+					<h3>ct<wbr>Min<wbr>Valid<wbr>Version</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtMinValidVersion</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L21">services/change-tracking/version/change-tracking-min-valid-version.ts:21</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>note</dt>
+									<dd><p>this function accept table name or table ID</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>input: <span class="tsd-signature-type">CtMinValidVersion</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="cttabledisable" class="tsd-anchor"></a>
+					<h3>ct<wbr>Table<wbr>Disable</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Table<wbr>Disable<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtTableDisableInput</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="modules.html#cttablesstatus" class="tsd-signature-type" data-tsd-kind="Function">ctTablesStatus</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/manage/change-tracking-table-disable.ts#L9">services/change-tracking/manage/change-tracking-table-disable.ts:9</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Disable change tracking in Table level</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtTableDisableInput</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="modules.html#cttablesstatus" class="tsd-signature-type" data-tsd-kind="Function">ctTablesStatus</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="cttableenable" class="tsd-anchor"></a>
+					<h3>ct<wbr>Table<wbr>Enable</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Table<wbr>Enable<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtTableEnableInput</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="modules.html#cttablesstatus" class="tsd-signature-type" data-tsd-kind="Function">ctTablesStatus</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/manage/change-tracking-table-enable.ts#L10">services/change-tracking/manage/change-tracking-table-enable.ts:10</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enable change tracking in Table level</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtTableEnableInput</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="modules.html#cttablesstatus" class="tsd-signature-type" data-tsd-kind="Function">ctTablesStatus</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="cttablesstatus" class="tsd-anchor"></a>
+					<h3>ct<wbr>Tables<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Tables<wbr>Status<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IGetDbStatus</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">GetTablesStatusOut</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/change-tracking/manage/change-tracking-table-status.ts#L17">services/change-tracking/manage/change-tracking-table-status.ts:17</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">IGetDbStatus</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">GetTablesStatusOut</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="getprimarykeys" class="tsd-anchor"></a>
+					<h3>get<wbr>Primary<wbr>Keys</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Primary<wbr>Keys<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GetPrimaryKeys</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/cdb4e6a/src/services/general/primary-keys.ts#L11">services/general/primary-keys.ts:11</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">GetPrimaryKeys</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
@@ -68,6 +417,42 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#ctchanges" class="tsd-kind-icon">ct<wbr>Changes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#ctchangesallfields" class="tsd-kind-icon">ct<wbr>Changes<wbr>All<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctcurrentversion" class="tsd-kind-icon">ct<wbr>Current<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctdbdisable" class="tsd-kind-icon">ct<wbr>DbDisable</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctdbenable" class="tsd-kind-icon">ct<wbr>DbEnable</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctdbstatus" class="tsd-kind-icon">ct<wbr>DbStatus</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctgrantaccess" class="tsd-kind-icon">ct<wbr>Grant<wbr>Access</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctminvalidversion" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#cttabledisable" class="tsd-kind-icon">ct<wbr>Table<wbr>Disable</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#cttableenable" class="tsd-kind-icon">ct<wbr>Table<wbr>Enable</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#cttablesstatus" class="tsd-kind-icon">ct<wbr>Tables<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getprimarykeys" class="tsd-kind-icon">get<wbr>Primary<wbr>Keys</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
