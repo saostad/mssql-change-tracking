@@ -11,5 +11,18 @@ npm i mssql-change-tracking
 ```
 
 ```ts
-import {} from "mssql-change-tracking";
+import { ctDbStatus } from "mssql-change-tracking";
+import sql from "mssql";
+
+const pool = new sql.ConnectionPool({
+  server: "xxxx",
+  user: "xxxx",
+  password: "xxxx",
+  database: "MY_DB_NAME",
+});
+
+await pool.connect();
+
+const status = await ctDbStatus({ dbName: "MY_DB_NAME", pool });
+console.log(status);
 ```

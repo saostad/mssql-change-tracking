@@ -70,7 +70,20 @@
 				</a>
 				<pre><code class="language-sh"><span style="color: #000000">npm i mssql-change-tracking</span>
 </code></pre>
-				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> {} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;mssql-change-tracking&quot;</span><span style="color: #000000">;</span>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">ctDbStatus</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;mssql-change-tracking&quot;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">sql</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;mssql&quot;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">pool</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">sql</span><span style="color: #000000">.</span><span style="color: #795E26">ConnectionPool</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">server:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;xxxx&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">user:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;xxxx&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;xxxx&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">database:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;MY_DB_NAME&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">pool</span><span style="color: #000000">.</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">status</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">ctDbStatus</span><span style="color: #000000">({ </span><span style="color: #001080">dbName:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;MY_DB_NAME&quot;</span><span style="color: #000000">, </span><span style="color: #001080">pool</span><span style="color: #000000"> });</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">status</span><span style="color: #000000">);</span>
 </code></pre>
 			</div>
 		</div>
