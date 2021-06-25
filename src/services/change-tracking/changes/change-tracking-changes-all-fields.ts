@@ -14,7 +14,10 @@ type CtChangesAllFieldsOutput = {
   [targetTableFields: string]: any;
 };
 
-/** @returns changes since specific version number including target table fields */
+/**
+ * @returns changes since specific version number including target table fields
+ * @description This rowset function is used to query for change information. The function queries the data stored in the internal change tracking tables. The function returns a results set that contains the primary keys of rows that have changed together with other change information such as the operation, columns updated and version for the row.
+ */
 export async function ctChangesAllFields<TargetTableFields>({
   pool,
   sinceVersion,

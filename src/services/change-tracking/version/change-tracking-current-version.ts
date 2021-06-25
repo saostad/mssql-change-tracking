@@ -6,6 +6,7 @@ type CtCurrentVersionInput = {
   dbName?: string;
 };
 
+/** @description this function is used to obtain the current version that will be used the next time when querying changes. This version represents the version of the last committed transaction. */
 export async function ctCurrentVersion({
   pool,
   dbName,

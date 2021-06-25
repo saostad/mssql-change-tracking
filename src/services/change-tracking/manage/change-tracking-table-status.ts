@@ -8,11 +8,11 @@ interface IGetDbStatus {
 }
 type GetTablesStatusOut = {
   table_name: string;
-  object_id: bigint;
+  object_id: number;
   is_track_columns_updated_on: "0" | "1";
-  min_valid_version: bigint;
-  begin_version: bigint;
-  cleanup_version: bigint;
+  min_valid_version: number;
+  begin_version: number;
+  cleanup_version: number;
 };
 export async function ctTablesStatus({
   pool,

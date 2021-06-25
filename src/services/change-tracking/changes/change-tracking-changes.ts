@@ -15,7 +15,10 @@ interface CtChangesInput extends QueryInput {
   sinceVersion: string;
   tableName: string;
 }
-/** @returns changes since specific version number */
+/**
+ * @returns changes since specific version number
+ * @description This rowset function is used to query for change information. The function queries the data stored in the internal change tracking tables. The function returns a results set that contains the primary keys of rows that have changed together with other change information such as the operation, columns updated and version for the row.
+ */
 export async function ctChanges<PrimaryKeys>({
   pool,
   sinceVersion,

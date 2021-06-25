@@ -17,7 +17,10 @@ interface MinValidVersionByTableId {
 }
 type CtMinValidVersion = MinValidVersionByTableName | MinValidVersionByTableId;
 
-/** @note this function accept table name or table ID */
+/**
+ * @note this function accept table name or table ID
+ * @description This function is used to obtain the minimum valid version that a client can have and still obtain valid results from CHANGETABLE(). The client should check the last synchronization version against the value that is returned by this function. If the last synchronization version is less than the version returned by this function, the client will be unable to obtain valid results from CHANGETABLE() and will have to reinitialize.
+ */
 export async function ctMinValidVersion(
   input: CtMinValidVersion,
 ): Promise<string | null> {
