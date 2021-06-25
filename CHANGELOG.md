@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.2.0](https://github.com/saostad/mssql-change-tracking/compare/v0.1.0...v0.2.0)
+
+> 24 June 2021
+
+- doc: readme updated [`aa2603e`](https://github.com/saostad/mssql-change-tracking/commit/aa2603ef894c9ee7928baefe6cfbef01625a9233)
+- doc: change log [`4f97d98`](https://github.com/saostad/mssql-change-tracking/commit/4f97d98ad184b1f3ee1b1705f1c2b780397a7324)
+
 #### v0.1.0
 
 > 24 June 2021
