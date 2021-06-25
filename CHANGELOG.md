@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.2.1](https://github.com/saostad/mssql-change-tracking/compare/v0.2.0...v0.2.1)
+
+> 24 June 2021
+
+- fix: npm package publishing [`17cc582`](https://github.com/saostad/mssql-change-tracking/commit/17cc5822740efe347ef6730048e6720468510a8f)
+- doc: change log [`b570a73`](https://github.com/saostad/mssql-change-tracking/commit/b570a732aa7b4aa43ced4155d05d6e68186b34f3)
+
 #### [v0.2.0](https://github.com/saostad/mssql-change-tracking/compare/v0.1.0...v0.2.0)
 
 > 24 June 2021
