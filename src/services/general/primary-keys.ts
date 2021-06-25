@@ -1,3 +1,4 @@
+import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 
 interface Base {
@@ -11,6 +12,7 @@ export async function getPrimaryKeys({
   pool,
   tableName,
 }: GetPrimaryKeys): Promise<string[]> {
+  writeLog(`getPrimaryKeys`, { level: "trace" });
   return pool
     .request()
     .query(primaryKeysQuery(tableName))
