@@ -7,5 +7,7 @@ export * from "./manage/change-tracking-table-enable";
 export * from "./manage/change-tracking-grant-access";
 export * from "./version/change-tracking-current-version";
 export * from "./version/change-tracking-min-valid-version";
+export * from "./version/change-tracking-is-version-valid";
+export * from "./version/change-tracking-is-version-valid-all-tables";
 export * from "./changes/change-tracking-changes";
 export * from "./changes/change-tracking-changes-all-fields";
