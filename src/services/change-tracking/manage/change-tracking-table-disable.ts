@@ -1,6 +1,7 @@
 import { writeLog } from "fast-node-logger";
 import sql from "mssql";
 import { ctTablesStatus } from "./change-tracking-table-status";
+
 type CtTableDisableInput = QueryInput & {
   pool: sql.ConnectionPool;
 };
