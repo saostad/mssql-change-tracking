@@ -6,19 +6,19 @@ type CtGrantAccess = QueryInput & {
 };
 
 /** grant access to change tracking data for specific table to specific user */
-export async function ctGrantAccess({
+export async function ctAccessGrant({
   pool,
   userName,
   tableName,
   dbName,
   schema,
 }: CtGrantAccess): Promise<void> {
-  writeLog(`ctGrantAccess`, { level: "trace" });
+  writeLog(`ctAccessGrant`, { level: "trace" });
 
   await pool
     .request()
     .query(
-      changeTrackingGrantAccessQuery({ tableName, userName, dbName, schema }),
+      changeTrackingAccessGrantQuery({ tableName, userName, dbName, schema }),
     )
     .then((result) => result.recordset);
 }
@@ -29,7 +29,7 @@ type QueryInput = {
   tableName: string;
   userName: string;
 };
-function changeTrackingGrantAccessQuery({
+function changeTrackingAccessGrantQuery({
   tableName,
   userName,
   schema,
