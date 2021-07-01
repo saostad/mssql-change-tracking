@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.6.0](https://github.com/saostad/mssql-change-tracking/compare/v0.5.0...v0.6.0)
+
+> 1 July 2021
+
+- pub: v 0.6.0 [`306b6a6`](https://github.com/saostad/mssql-change-tracking/commit/306b6a6ad7056078dcb421ec2efa055736343262)
+- feat: ctAccessStatus added to get list of permissions to specific user [`b87d382`](https://github.com/saostad/mssql-change-tracking/commit/b87d38253706cce86874ad35a508a25f6a214ba1)
+- doc: change log [`48428e3`](https://github.com/saostad/mssql-change-tracking/commit/48428e367a73f57a9455361b7dfd4c892eb27828)
+
 #### [v0.5.0](https://github.com/saostad/mssql-change-tracking/compare/v0.4.0...v0.5.0)
 
 > 29 June 2021
