@@ -64,13 +64,14 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="modules.html#ctaccessgrant" class="tsd-kind-icon">ct<wbr>Access<wbr>Grant</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#ctaccessstatus" class="tsd-kind-icon">ct<wbr>Access<wbr>Status</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#ctchanges" class="tsd-kind-icon">ct<wbr>Changes</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#ctchangesallfields" class="tsd-kind-icon">ct<wbr>Changes<wbr>All<wbr>Fields</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#ctcurrentversion" class="tsd-kind-icon">ct<wbr>Current<wbr>Version</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#ctdbdisable" class="tsd-kind-icon">ct<wbr>DbDisable</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#ctdbenable" class="tsd-kind-icon">ct<wbr>DbEnable</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#ctdbstatus" class="tsd-kind-icon">ct<wbr>DbStatus</a></li>
-								<li class="tsd-kind-function"><a href="modules.html#ctgrantaccess" class="tsd-kind-icon">ct<wbr>Grant<wbr>Access</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#ctisversionvalid" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#ctisversionvalidalltables" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>All<wbr>Tables</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#ctminvalidversion" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version</a></li>
@@ -85,6 +86,58 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="ctaccessgrant" class="tsd-anchor"></a>
+					<h3>ct<wbr>Access<wbr>Grant</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Access<wbr>Grant<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtGrantAccess</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/manage/change-tracking-access-grant.ts#L9">services/change-tracking/manage/change-tracking-access-grant.ts:9</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>grant access to change tracking data for specific table to specific user</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">CtGrantAccess</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="ctaccessstatus" class="tsd-anchor"></a>
+					<h3>ct<wbr>Access<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">ct<wbr>Access<wbr>Status<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AccessStatusInput</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessStatusOut</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/manage/change-tracking-access-status.ts#L59">services/change-tracking/manage/change-tracking-access-status.ts:59</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">AccessStatusInput</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AccessStatusOut</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>list of permissions to specific user</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 					<a name="ctchanges" class="tsd-anchor"></a>
 					<h3>ct<wbr>Changes</h3>
@@ -95,7 +148,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/changes/change-tracking-changes.ts#L30">services/change-tracking/changes/change-tracking-changes.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/changes/change-tracking-changes.ts#L30">services/change-tracking/changes/change-tracking-changes.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -132,7 +185,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/changes/change-tracking-changes-all-fields.ts#L28">services/change-tracking/changes/change-tracking-changes-all-fields.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/changes/change-tracking-changes-all-fields.ts#L28">services/change-tracking/changes/change-tracking-changes-all-fields.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -169,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/version/change-tracking-current-version.ts#L10">services/change-tracking/version/change-tracking-current-version.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/version/change-tracking-current-version.ts#L10">services/change-tracking/version/change-tracking-current-version.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -199,7 +252,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/manage/change-tracking-db-disable.ts#L11">services/change-tracking/manage/change-tracking-db-disable.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/manage/change-tracking-db-disable.ts#L11">services/change-tracking/manage/change-tracking-db-disable.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -227,7 +280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/manage/change-tracking-db-enable.ts#L16">services/change-tracking/manage/change-tracking-db-enable.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/manage/change-tracking-db-enable.ts#L16">services/change-tracking/manage/change-tracking-db-enable.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -255,7 +308,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/manage/change-tracking-db-status.ts#L20">services/change-tracking/manage/change-tracking-db-status.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/manage/change-tracking-db-status.ts#L20">services/change-tracking/manage/change-tracking-db-status.ts:20</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -269,34 +322,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="ctgrantaccess" class="tsd-anchor"></a>
-					<h3>ct<wbr>Grant<wbr>Access</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">ct<wbr>Grant<wbr>Access<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CtGrantAccess</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/manage/change-tracking-grant-access.ts#L9">services/change-tracking/manage/change-tracking-grant-access.ts:9</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>grant access to change tracking data for specific table to specific user</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>__namedParameters: <span class="tsd-signature-type">CtGrantAccess</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="ctisversionvalid" class="tsd-anchor"></a>
 					<h3>ct<wbr>IsVersion<wbr>Valid</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -306,7 +331,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/version/change-tracking-is-version-valid.ts#L28">services/change-tracking/version/change-tracking-is-version-valid.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/version/change-tracking-is-version-valid.ts#L28">services/change-tracking/version/change-tracking-is-version-valid.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -342,7 +367,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts#L10">services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts#L10">services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -375,7 +400,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L24">services/change-tracking/version/change-tracking-min-valid-version.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L24">services/change-tracking/version/change-tracking-min-valid-version.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -408,7 +433,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/manage/change-tracking-table-disable.ts#L9">services/change-tracking/manage/change-tracking-table-disable.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/manage/change-tracking-table-disable.ts#L9">services/change-tracking/manage/change-tracking-table-disable.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -436,7 +461,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/manage/change-tracking-table-enable.ts#L10">services/change-tracking/manage/change-tracking-table-enable.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/manage/change-tracking-table-enable.ts#L10">services/change-tracking/manage/change-tracking-table-enable.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -464,7 +489,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/change-tracking/manage/change-tracking-table-status.ts#L17">services/change-tracking/manage/change-tracking-table-status.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/change-tracking/manage/change-tracking-table-status.ts#L17">services/change-tracking/manage/change-tracking-table-status.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -487,7 +512,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/fc01381/src/services/general/primary-keys.ts#L11">services/general/primary-keys.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/de34b45/src/services/general/primary-keys.ts#L11">services/general/primary-keys.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -512,6 +537,12 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctaccessgrant" class="tsd-kind-icon">ct<wbr>Access<wbr>Grant</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctaccessstatus" class="tsd-kind-icon">ct<wbr>Access<wbr>Status</a>
+					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="modules.html#ctchanges" class="tsd-kind-icon">ct<wbr>Changes</a>
 					</li>
@@ -529,9 +560,6 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#ctdbstatus" class="tsd-kind-icon">ct<wbr>DbStatus</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctgrantaccess" class="tsd-kind-icon">ct<wbr>Grant<wbr>Access</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#ctisversionvalid" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid</a>
