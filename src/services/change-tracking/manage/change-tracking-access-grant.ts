@@ -1,5 +1,6 @@
 import { writeLog } from "fast-node-logger";
 import sql from "mssql";
+import { getTableFullPath } from "../../../helpers/util";
 
 type CtGrantAccess = QueryInput & {
   pool: sql.ConnectionPool;
@@ -17,9 +18,7 @@ export async function ctAccessGrant({
 
   await pool
     .request()
-    .query(
-      changeTrackingAccessGrantQuery({ tableName, userName, dbName, schema }),
-    )
+    .query(ctAccessGrantQuery({ tableName, userName, dbName, schema }))
     .then((result) => result.recordset);
 }
 
@@ -29,19 +28,18 @@ type QueryInput = {
   tableName: string;
   userName: string;
 };
-function changeTrackingAccessGrantQuery({
+function ctAccessGrantQuery({
   tableName,
   userName,
   schema,
   dbName,
 }: QueryInput): string {
-  let tableFullPath = `[${tableName}]`;
-  if (dbName) {
-    tableFullPath = `[${dbName}].[${tableName}]`;
-  }
-  if (schema && dbName) {
-    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
-  }
+  const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
-  return `GRANT VIEW CHANGE TRACKING ON ${tableFullPath} TO [${userName}]`;
+  let query = `GRANT VIEW CHANGE TRACKING ON ${tableFullPath} TO [${userName}]`;
+
+  if (dbName) {
+    query = `USE [${dbName}]; `.concat(query);
+  }
+  return query;
 }

@@ -15,7 +15,7 @@ export async function ctCurrentVersion({
 
   return pool
     .request()
-    .query(changeTrackingCurrentVersionQuery(dbName))
+    .query(ctCurrentVersionQuery(dbName))
     .then((result) => result.recordset[0])
     .then((row) => row["current_version"]);
 }
@@ -23,7 +23,7 @@ export async function ctCurrentVersion({
 /**
  * @reference https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#about-the-change-tracking-functions
  */
-function changeTrackingCurrentVersionQuery(dbName?: string): string {
+export function ctCurrentVersionQuery(dbName?: string): string {
   let query = `SELECT CHANGE_TRACKING_CURRENT_VERSION() AS current_version`;
 
   if (dbName) {

@@ -14,11 +14,11 @@ export async function siDbEnable({
 }: SiDbEnable): ReturnType<typeof siStatus> {
   writeLog(`siDbEnable`, { level: "trace" });
 
-  await pool.request().query(snapshotIsolationDbEnableQuery(dbName));
+  await pool.request().query(siDbEnableQuery(dbName));
   return siStatus({ pool, dbName });
 }
 
-function snapshotIsolationDbEnableQuery(dbName: string): string {
+function siDbEnableQuery(dbName: string): string {
   return `ALTER DATABASE [${dbName}] 
     SET ALLOW_SNAPSHOT_ISOLATION ON`;
 }

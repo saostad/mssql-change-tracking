@@ -65,7 +65,7 @@ export async function ctAccessStatus({
 
   return pool
     .request()
-    .query(changeTrackingAccessStatusQuery({ userName, dbName }))
+    .query(ctAccessStatusQuery({ userName, dbName }))
     .then((result) => result.recordset);
 }
 
@@ -78,10 +78,7 @@ type QueryInput = {
 /**
  * @return sql query to get list of change tracking enabled tables
  */
-function changeTrackingAccessStatusQuery({
-  dbName,
-  userName,
-}: QueryInput): string {
+function ctAccessStatusQuery({ dbName, userName }: QueryInput): string {
   let query = `SELECT DISTINCT pr.principal_id, pr.name AS [UserName], pr.type_desc AS [User_or_Role], 
   pr.authentication_type_desc AS [Auth_Type], pe.state_desc,
   pe.permission_name, pe.class_desc, o.[name] AS 'Object', pr.create_date, pr.modify_date

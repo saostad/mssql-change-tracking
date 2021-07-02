@@ -1,5 +1,6 @@
 import { writeLog } from "fast-node-logger";
 import sql from "mssql";
+import { getTableFullPath } from "../../../helpers/util";
 
 type CtIsVersionValid =
   | {
@@ -34,7 +35,7 @@ export async function ctIsVersionValid(
     return input.pool
       .request()
       .query(
-        changeTrackingIsVersionValidByTableIdQuery({
+        ctIsVersionValidByTableIdQuery({
           versionNumber: input.versionNumber,
           dbName: input.dbName,
           tableId: input.tableId,
@@ -46,7 +47,7 @@ export async function ctIsVersionValid(
     return input.pool
       .request()
       .query(
-        changeTrackingIsVersionValidByTableNameQuery({
+        ctIsVersionValidByTableNameQuery({
           versionNumber: input.versionNumber,
           dbName: input.dbName,
           schema: input.schema,
@@ -65,7 +66,7 @@ type TableIdQueryInput = {
   dbName?: string;
   tableId: number;
 };
-function changeTrackingIsVersionValidByTableIdQuery({
+export function ctIsVersionValidByTableIdQuery({
   versionNumber,
   dbName,
   tableId,
@@ -92,19 +93,13 @@ type TableNameQueryInput = {
   schema?: string;
   tableName: string;
 };
-function changeTrackingIsVersionValidByTableNameQuery({
+export function ctIsVersionValidByTableNameQuery({
   versionNumber,
   dbName,
   tableName,
   schema,
 }: TableNameQueryInput): string {
-  let tableFullPath = `[${tableName}]`;
-  if (dbName) {
-    tableFullPath = `[${dbName}].[${tableName}]`;
-  }
-  if (schema && dbName) {
-    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
-  }
+  const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
   let query = `
    -- Check individual table.  

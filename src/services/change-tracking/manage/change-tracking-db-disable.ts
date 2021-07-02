@@ -14,11 +14,11 @@ export async function ctDbDisable({
 }: CtDbDisable): ReturnType<typeof ctDbStatus> {
   writeLog(`ctDbDisable`, { level: "trace" });
 
-  await pool.request().query(changeTrackingDbDisableQuery(dbName));
+  await pool.request().query(ctDbDisableQuery(dbName));
   return ctDbStatus({ pool, dbName });
 }
 
-function changeTrackingDbDisableQuery(dbName: string): string {
+function ctDbDisableQuery(dbName: string): string {
   return `ALTER DATABASE [${dbName}] 
       SET CHANGE_TRACKING = OFF`;
 }

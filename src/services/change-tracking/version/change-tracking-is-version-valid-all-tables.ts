@@ -16,7 +16,7 @@ export async function ctIsVersionValidAllTables({
   return pool
     .request()
     .query(
-      changeTrackingIsVersionValidAllTablesQuery({
+      ctIsVersionValidAllTablesQuery({
         versionNumber,
       }),
     )
@@ -28,7 +28,7 @@ type QueryInput = {
   versionNumber: string;
   dbName?: string;
 };
-function changeTrackingIsVersionValidAllTablesQuery({
+export function ctIsVersionValidAllTablesQuery({
   versionNumber,
   dbName,
 }: QueryInput): string {

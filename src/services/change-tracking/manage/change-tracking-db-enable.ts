@@ -23,7 +23,7 @@ export async function ctDbEnable({
   writeLog(`ctDbEnable`, { level: "trace" });
 
   await pool.request().query(
-    changeTrackingDbEnableQuery({
+    ctDbEnableQuery({
       dbName,
       autoCleanup,
       retentionDayNumber,
@@ -40,7 +40,7 @@ type QueryInput = {
   retentionDayNumber: number;
   retentionPeriodUnit: RetentionPeriodUnit;
 };
-function changeTrackingDbEnableQuery({
+function ctDbEnableQuery({
   dbName,
   autoCleanup,
   retentionDayNumber,

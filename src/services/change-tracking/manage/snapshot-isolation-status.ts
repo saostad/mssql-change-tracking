@@ -20,11 +20,11 @@ export async function siStatus({
 
   return pool
     .request()
-    .query(statusQuery(dbName))
+    .query(siStatusQuery(dbName))
     .then((result) => result.recordset);
 }
 
-function statusQuery(dbName?: string): string {
+function siStatusQuery(dbName?: string): string {
   let query = `
   SELECT DB_NAME(database_id) AS db_name, 
       is_read_committed_snapshot_on,

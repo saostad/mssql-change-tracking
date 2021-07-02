@@ -1,5 +1,6 @@
 import { writeLog } from "fast-node-logger";
 import sql from "mssql";
+import { getTableFullPath } from "../../../helpers/util";
 import { ctTablesStatus } from "./change-tracking-table-status";
 
 type CtTableDisableInput = QueryInput & {
@@ -17,7 +18,7 @@ export async function ctTableDisable({
 
   await pool
     .request()
-    .query(changeTrackingTableDisableQuery({ schema, dbName, tableName }));
+    .query(ctTableDisableQuery({ schema, dbName, tableName }));
 
   return ctTablesStatus({ dbName, pool });
 }
@@ -27,19 +28,18 @@ type QueryInput = {
   dbName?: string;
   tableName: string;
 };
-function changeTrackingTableDisableQuery({
+function ctTableDisableQuery({
   tableName,
   dbName,
   schema,
 }: QueryInput): string {
-  let tableFullPath = `[${tableName}]`;
-  if (dbName) {
-    tableFullPath = `[${dbName}].[${tableName}]`;
-  }
-  if (schema && dbName) {
-    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
-  }
+  const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
-  return `ALTER TABLE ${tableFullPath} 
+  let query = `ALTER TABLE ${tableFullPath} 
   DISABLE CHANGE_TRACKING;`;
+
+  if (dbName) {
+    query = `USE [${dbName}]; `.concat(query);
+  }
+  return query;
 }

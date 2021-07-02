@@ -1,6 +1,7 @@
 import sql from "mssql";
 import { writeLog } from "fast-node-logger";
 import { ctIsVersionValid, ctMinValidVersion } from "..";
+import { getTableFullPath } from "../../../helpers/util";
 
 type CtChangesAllFieldsInput = QueryInput & {
   pool: sql.ConnectionPool;
@@ -56,7 +57,7 @@ export async function ctChangesAllFields<TargetTableFields>({
       return pool
         .request()
         .query(
-          changeTrackingChangesAllFieldsQuery({
+          ctChangesAllFieldsQuery({
             tableName,
             sinceVersion,
             primaryKeys,
@@ -78,7 +79,7 @@ export async function ctChangesAllFields<TargetTableFields>({
     return pool
       .request()
       .query(
-        changeTrackingChangesAllFieldsQuery({
+        ctChangesAllFieldsQuery({
           tableName,
           sinceVersion,
           primaryKeys,
@@ -95,20 +96,14 @@ type QueryInput = {
   primaryKeys: string[];
   sinceVersion: string;
 };
-function changeTrackingChangesAllFieldsQuery({
+export function ctChangesAllFieldsQuery({
   schema,
   dbName,
   tableName,
   primaryKeys,
   sinceVersion,
 }: QueryInput): string {
-  let tableFullPath = `[${tableName}]`;
-  if (dbName) {
-    tableFullPath = `[${dbName}].[${tableName}]`;
-  }
-  if (schema && dbName) {
-    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
-  }
+  const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
   let query = `SELECT *  
   FROM CHANGETABLE (CHANGES ${tableFullPath}, ${sinceVersion}) as ct
@@ -120,5 +115,8 @@ function changeTrackingChangesAllFieldsQuery({
     );
   }
 
+  if (dbName) {
+    query = `USE [${dbName}]; `.concat(query);
+  }
   return query;
 }

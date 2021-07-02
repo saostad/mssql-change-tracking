@@ -1,5 +1,6 @@
 import { writeLog } from "fast-node-logger";
 import sql from "mssql";
+import { getTableFullPath } from "../../../helpers/util";
 
 interface MinValidVersionByTableName {
   pool: sql.ConnectionPool;
@@ -30,7 +31,7 @@ export async function ctMinValidVersion(
     return input.pool
       .request()
       .query(
-        changeTrackingMinValidVersionByTableIdQuery({
+        ctMinValidVersionByTableIdQuery({
           tableId: input.tableId,
           dbName: input.dbName,
         }),
@@ -41,7 +42,7 @@ export async function ctMinValidVersion(
     return input.pool
       .request()
       .query(
-        changeTrackingMinValidVersionByTableNameQuery({
+        ctMinValidVersionByTableNameQuery({
           tableName: input.tableName,
           dbName: input.dbName,
           schema: input.schema,
@@ -59,27 +60,26 @@ type TableNameQueryInput = {
   dbName?: string;
   tableName: string;
 };
-function changeTrackingMinValidVersionByTableNameQuery({
+export function ctMinValidVersionByTableNameQuery({
   tableName,
   dbName,
   schema,
 }: TableNameQueryInput): string {
-  let tableFullPath = `[${tableName}]`;
-  if (dbName) {
-    tableFullPath = `[${dbName}].[${tableName}]`;
-  }
-  if (schema && dbName) {
-    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
-  }
+  const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
-  return `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID('${tableFullPath}')) AS min_valid_version`;
+  let query = `SELECT CHANGE_TRACKING_MIN_VALID_VERSION(OBJECT_ID('${tableFullPath}')) AS min_valid_version`;
+
+  if (dbName) {
+    query = `USE [${dbName}]; `.concat(query);
+  }
+  return query;
 }
 
 type TableIdQueryInput = {
   tableId: string;
   dbName?: string;
 };
-function changeTrackingMinValidVersionByTableIdQuery({
+export function ctMinValidVersionByTableIdQuery({
   dbName,
   tableId,
 }: TableIdQueryInput): string {
