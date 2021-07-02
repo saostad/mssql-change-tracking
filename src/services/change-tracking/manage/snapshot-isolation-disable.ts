@@ -18,7 +18,7 @@ export async function siDbDisable({
   return siStatus({ pool, dbName });
 }
 
-function siDbDisableQuery(dbName: string): string {
+export function siDbDisableQuery(dbName: string): string {
   return `ALTER DATABASE [${dbName}] 
     SET ALLOW_SNAPSHOT_ISOLATION OFF`;
 }

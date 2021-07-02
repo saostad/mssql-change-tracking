@@ -40,7 +40,7 @@ type QueryInput = {
   retentionDayNumber: number;
   retentionPeriodUnit: RetentionPeriodUnit;
 };
-function ctDbEnableQuery({
+export function ctDbEnableQuery({
   dbName,
   autoCleanup,
   retentionDayNumber,

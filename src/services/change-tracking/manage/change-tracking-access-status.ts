@@ -78,7 +78,7 @@ type QueryInput = {
 /**
  * @return sql query to get list of change tracking enabled tables
  */
-function ctAccessStatusQuery({ dbName, userName }: QueryInput): string {
+export function ctAccessStatusQuery({ dbName, userName }: QueryInput): string {
   let query = `SELECT DISTINCT pr.principal_id, pr.name AS [UserName], pr.type_desc AS [User_or_Role], 
   pr.authentication_type_desc AS [Auth_Type], pe.state_desc,
   pe.permission_name, pe.class_desc, o.[name] AS 'Object', pr.create_date, pr.modify_date

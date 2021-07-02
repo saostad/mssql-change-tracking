@@ -28,7 +28,7 @@ type QueryInput = {
   dbName?: string;
   tableName: string;
 };
-function ctTableDisableQuery({
+export function ctTableDisableQuery({
   tableName,
   dbName,
   schema,

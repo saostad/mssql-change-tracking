@@ -39,7 +39,7 @@ type QueryInput = {
   trackColumnsUpdated?: "ON" | "OFF";
 };
 
-function ctTableEnableQuery({
+export function ctTableEnableQuery({
   schema,
   dbName,
   tableName,

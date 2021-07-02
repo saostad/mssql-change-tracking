@@ -24,7 +24,7 @@ export async function siStatus({
     .then((result) => result.recordset);
 }
 
-function siStatusQuery(dbName?: string): string {
+export function siStatusQuery(dbName?: string): string {
   let query = `
   SELECT DB_NAME(database_id) AS db_name, 
       is_read_committed_snapshot_on,

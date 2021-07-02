@@ -18,7 +18,7 @@ export async function siDbEnable({
   return siStatus({ pool, dbName });
 }
 
-function siDbEnableQuery(dbName: string): string {
+export function siDbEnableQuery(dbName: string): string {
   return `ALTER DATABASE [${dbName}] 
     SET ALLOW_SNAPSHOT_ISOLATION ON`;
 }

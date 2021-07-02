@@ -28,7 +28,7 @@ type QueryInput = {
   tableName: string;
   userName: string;
 };
-function ctAccessGrantQuery({
+export function ctAccessGrantQuery({
   tableName,
   userName,
   schema,

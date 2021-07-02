@@ -1,11 +1,6 @@
 import sql from "mssql";
 import { writeLog } from "fast-node-logger";
-import {
-  ctChangesSafeQuery,
-  ctCurrentVersion,
-  ctIsVersionValid,
-  ctMinValidVersion,
-} from "..";
+import { ctChangesSafeQuery, ctCurrentVersion } from "..";
 import { getTableFullPath } from "../../../helpers/util";
 
 type CtChangesAllFieldsInput = QueryInput & {
@@ -35,7 +30,7 @@ type CtChangesAllFieldsOutput = {
   [targetTableFields: string]: any;
 };
 
-export type ValidResult<TargetTableFields> = {
+type ValidResult<TargetTableFields> = {
   currentVersion: string;
   changes: Array<CtChangesAllFieldsOutput & TargetTableFields>;
 };

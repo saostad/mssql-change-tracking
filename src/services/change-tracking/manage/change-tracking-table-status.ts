@@ -32,7 +32,7 @@ export async function ctTablesStatus({
  * - Returns one row for each table in the current database that has change tracking enabled.
  * - Reference https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/change-tracking-catalog-views-sys-change-tracking-tables?view=sql-server-ver15
  */
-function ctTablesStatusQuery(dbName?: string): string {
+export function ctTablesStatusQuery(dbName?: string): string {
   let query = `SELECT OBJECT_NAME(object_id) AS table_name, * FROM sys.change_tracking_tables`;
 
   if (dbName) {

@@ -18,7 +18,7 @@ export async function ctDbDisable({
   return ctDbStatus({ pool, dbName });
 }
 
-function ctDbDisableQuery(dbName: string): string {
+export function ctDbDisableQuery(dbName: string): string {
   return `ALTER DATABASE [${dbName}] 
       SET CHANGE_TRACKING = OFF`;
 }
