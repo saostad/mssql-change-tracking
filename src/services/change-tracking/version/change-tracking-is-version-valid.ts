@@ -15,9 +15,9 @@ type CtIsVersionValid =
       pool: sql.ConnectionPool;
       versionNumber: string;
       dbName?: string;
-      tableId?: number;
       schema?: never;
       tableName?: never;
+      tableId?: number;
     };
 
 /**
@@ -42,7 +42,7 @@ export async function ctIsVersionValid(
         }),
       )
       .then((result) => result.recordset)
-      .then((row) => row[0]["result"] !== "Client must be reinitialized");
+      .then((row) => row?.[0]["result"] !== "Client must be reinitialized");
   } else if (input.tableName) {
     return input.pool
       .request()
@@ -55,7 +55,7 @@ export async function ctIsVersionValid(
         }),
       )
       .then((result) => result.recordset)
-      .then((row) => row[0]["result"] !== "Client must be reinitialized");
+      .then((row) => row?.[0]["result"] !== "Client must be reinitialized");
   } else {
     throw new Error("tableName or tableId should be provided.");
   }
@@ -115,5 +115,6 @@ export function ctIsVersionValidByTableNameQuery({
   if (dbName) {
     query = `USE [${dbName}]; `.concat(query);
   }
+
   return query;
 }

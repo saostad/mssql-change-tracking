@@ -17,7 +17,6 @@ type ValidResult<PrimaryKeys> = {
   currentVersion: string;
   changes: Array<CtChangesOutput & PrimaryKeys>;
 };
-type ErrorResult = { error: string };
 
 interface CtChangesInput extends QueryInput {
   pool: sql.ConnectionPool;
@@ -25,8 +24,9 @@ interface CtChangesInput extends QueryInput {
   tableName: string;
   /**
    * @default true
+   * @behavior throws error if version is not valid
    * @description
-   * - if set to true, will check the validity if version number before query for changes and uses [Snapshot Isolation](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#using-snapshot-isolation).
+   * - If set to true, will check the validity if version number before query for changes and uses [Snapshot Isolation](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#using-snapshot-isolation).
    * - Before an application obtains changes by using CHANGETABLE(CHANGES ...), the application must validate the value for last_synchronization_version that it plans to pass to CHANGETABLE(CHANGES ...). If the value of last_synchronization_version is not valid, that application must reinitialize all the data. [Reference](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#validating-the-last-synchronized-version)
    * @steps To obtain data inside a snapshot transaction, perform the following steps: ([Reference](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#using-snapshot-isolation))
    * 1. Set the transaction isolation level to snapshot and start a transaction.
@@ -39,7 +39,7 @@ interface CtChangesInput extends QueryInput {
 }
 /**
  * @returns changes since specific version number
- * @description This rowset function is used to query for change information. The function queries the data stored in the internal change tracking tables. The function returns a results set that contains the primary keys of rows that have changed together with other change information such as the operation, columns updated and version for the row.
+ * @description This row-set function is used to query for change information. The function queries the data stored in the internal change tracking tables. The function returns a results set that contains the primary keys of rows that have changed together with other change information such as the operation, columns updated and version for the row.
  */
 export async function ctChanges<PrimaryKeys>({
   pool,
@@ -48,12 +48,12 @@ export async function ctChanges<PrimaryKeys>({
   dbName,
   schema,
   safeRun,
-}: CtChangesInput): Promise<ValidResult<PrimaryKeys> | ErrorResult> {
+}: CtChangesInput): Promise<ValidResult<PrimaryKeys>> {
   writeLog(`ctChanges()`, { level: "trace" });
 
   // set default value for flag.
   let safeRunFlag = true;
-  if (safeRun) {
+  if (typeof safeRun === "boolean") {
     safeRunFlag = safeRun;
   }
 
@@ -63,7 +63,7 @@ export async function ctChanges<PrimaryKeys>({
       .query(ctChangesSafeQuery({ schema, dbName, tableName, sinceVersion }))
       .then((result) => {
         if (result.recordset[0].error) {
-          return result.recordset[0];
+          throw new Error(result.recordset[0].error);
         }
         return {
           currentVersion: result.recordsets[0][0]["current_version"],
@@ -72,6 +72,7 @@ export async function ctChanges<PrimaryKeys>({
       });
   } else {
     // do not check for version validity and snapshot isolation
+    console.log(`File: change-tracking-changes.ts,`, `Line: 75 => `);
 
     const currentVersion = await ctCurrentVersion({ pool, dbName });
 

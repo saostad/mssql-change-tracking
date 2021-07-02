@@ -41,7 +41,7 @@ export async function ctChangesAllFields<TargetTableFields>({
 
   // set default value for flag.
   let safeRunFlag = true;
-  if (safeRun) {
+  if (typeof safeRun === "boolean") {
     safeRunFlag = safeRun;
   }
 
@@ -53,6 +53,7 @@ export async function ctChangesAllFields<TargetTableFields>({
       dbName,
       tableName,
     });
+
     if (isVersionValid) {
       return pool
         .request()
