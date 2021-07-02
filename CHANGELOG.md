@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.8.0](https://github.com/saostad/mssql-change-tracking/compare/v0.7.0...v0.8.0)
+
+> 2 July 2021
+
+- pub: v0.8.0 [`7a41232`](https://github.com/saostad/mssql-change-tracking/commit/7a412328d46431c18a582bd2916b1535503e0e62)
+- enhance: export query generator functions [`a485da5`](https://github.com/saostad/mssql-change-tracking/commit/a485da5b0903854c4932f18b678f956ed8554c2f)
+- doc: change log [`30a6472`](https://github.com/saostad/mssql-change-tracking/commit/30a6472e280ffd39a4dd130e220adaf37b35c47d)
+
 #### [v0.7.0](https://github.com/saostad/mssql-change-tracking/compare/v0.6.0...v0.7.0)
 
 > 2 July 2021
