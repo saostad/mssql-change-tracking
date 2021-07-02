@@ -1,6 +1,6 @@
 {
   "name": "mssql-change-tracking",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "MS SQL server change tracking functions",
   "type": "module",
   "repository": {

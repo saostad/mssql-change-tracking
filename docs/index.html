@@ -108,6 +108,12 @@
 				<p>Changes can be made to the tables after the version for next time has been obtained by using CHANGE_TRACKING_CURRENT_VERSION(). Therefore, more changes can be returned than expected.</p>
 				<p>A transaction could commit in the time between the call to obtain changes from the Sales table and the call to obtain changes from the SalesOrders table. Therefore, the results for the SalesOrder table could have foreign key value that does not exist in the Sales table.</p>
 				<p>To overcome the previously listed challenges, we recommend that you use snapshot isolation. This will help to ensure consistency of change information and avoid race conditions that are related to the background cleanup task. If you do not use snapshot transactions, developing an application that uses change tracking could require significantly more effort.</p>
+				<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
+					<h3>TODO</h3>
+				</a>
+				<ul>
+					<li><input disabled="" type="checkbox"> <a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#using-column-tracking">Column Tracking</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -120,6 +126,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#validresult" class="tsd-kind-icon">Valid<wbr>Result</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#ctaccessgrant" class="tsd-kind-icon">ct<wbr>Access<wbr>Grant</a>
 					</li>
@@ -133,7 +142,19 @@
 						<a href="modules.html#ctchangesallfields" class="tsd-kind-icon">ct<wbr>Changes<wbr>All<wbr>Fields</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="modules.html#ctchangesallfieldsquery" class="tsd-kind-icon">ct<wbr>Changes<wbr>All<wbr>Fields<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctchangesquery" class="tsd-kind-icon">ct<wbr>Changes<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctchangessafequery" class="tsd-kind-icon">ct<wbr>Changes<wbr>Safe<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="modules.html#ctcurrentversion" class="tsd-kind-icon">ct<wbr>Current<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctcurrentversionquery" class="tsd-kind-icon">ct<wbr>Current<wbr>Version<wbr>Query</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#ctdbdisable" class="tsd-kind-icon">ct<wbr>DbDisable</a>
@@ -151,7 +172,22 @@
 						<a href="modules.html#ctisversionvalidalltables" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>All<wbr>Tables</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="modules.html#ctisversionvalidalltablesquery" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>All<wbr>Tables<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctisversionvalidbytableidquery" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>ByTable<wbr>IdQuery</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctisversionvalidbytablenamequery" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>ByTable<wbr>Name<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="modules.html#ctminvalidversion" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctminvalidversionbytableidquery" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version<wbr>ByTable<wbr>IdQuery</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#ctminvalidversionbytablenamequery" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version<wbr>ByTable<wbr>Name<wbr>Query</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#cttabledisable" class="tsd-kind-icon">ct<wbr>Table<wbr>Disable</a>
@@ -164,6 +200,15 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#getprimarykeys" class="tsd-kind-icon">get<wbr>Primary<wbr>Keys</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#sidbdisable" class="tsd-kind-icon">si<wbr>DbDisable</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#sidbenable" class="tsd-kind-icon">si<wbr>DbEnable</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#sistatus" class="tsd-kind-icon">si<wbr>Status</a>
 					</li>
 				</ul>
 			</nav>
