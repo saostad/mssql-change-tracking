@@ -60,7 +60,15 @@ export async function ctChanges<PrimaryKeys>({
   if (safeRunFlag) {
     return pool
       .request()
-      .query(ctChangesSafeQuery({ schema, dbName, tableName, sinceVersion }))
+      .query(
+        ctChangesSafeQuery({
+          schema,
+          dbName,
+          tableName,
+          sinceVersion,
+          changeQuery: ctChangesQuery({ sinceVersion, tableName, schema }),
+        }),
+      )
       .then((result) => {
         if (result.recordset[0].error) {
           throw new Error(result.recordset[0].error);
@@ -72,7 +80,6 @@ export async function ctChanges<PrimaryKeys>({
       });
   } else {
     // do not check for version validity and snapshot isolation
-    console.log(`File: change-tracking-changes.ts,`, `Line: 75 => `);
 
     const currentVersion = await ctCurrentVersion({ pool, dbName });
 
@@ -96,7 +103,7 @@ type QueryInput = {
  * @reference https://docs.microsoft.com/en-us/sql/relational-databases/system-functions/changetable-transact-sql?view=sql-server-ver15
  * @note [required permissions](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/manage-change-tracking-sql-server?view=sql-server-ver15#security)
  */
-function ctChangesQuery({
+export function ctChangesQuery({
   sinceVersion,
   dbName,
   schema,
@@ -120,22 +127,16 @@ function ctChangesQuery({
  * 1. Obtain the changes for the table by using CHANGETABLE(CHANGES ...)
  * 1. Commit the transaction.
  */
-function ctChangesSafeQuery({
+export function ctChangesSafeQuery({
   tableName,
   sinceVersion,
   schema,
   dbName,
-}: QueryInput): string {
+  changeQuery,
+}: QueryInput & { changeQuery: string }): string {
   writeLog(`ctChangesSafeQuery()`, { level: "trace" });
 
-  let tableFullPath = `[${tableName}]`;
-
-  if (schema && dbName) {
-    tableFullPath = `[${dbName}].[${schema}].[${tableName}]`;
-  }
-  if (schema && !dbName) {
-    tableFullPath = `[${schema}].[${tableName}]`;
-  }
+  const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
   let query = `
   SET TRANSACTION ISOLATION LEVEL SNAPSHOT;  
@@ -147,7 +148,7 @@ function ctChangesSafeQuery({
                -- Obtain the version to use next time.  
               ${ctCurrentVersionQuery()}
               -- Obtain changes.
-              ${ctChangesQuery({ sinceVersion, tableName, schema })}  
+              ${changeQuery}
           END 
       ELSE
           BEGIN

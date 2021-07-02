@@ -1,14 +1,27 @@
 import sql from "mssql";
 import { writeLog } from "fast-node-logger";
-import { ctIsVersionValid, ctMinValidVersion } from "..";
+import {
+  ctChangesSafeQuery,
+  ctCurrentVersion,
+  ctIsVersionValid,
+  ctMinValidVersion,
+} from "..";
 import { getTableFullPath } from "../../../helpers/util";
 
 type CtChangesAllFieldsInput = QueryInput & {
   pool: sql.ConnectionPool;
   /**
-   * if set to true, will check the validity if version number before query for changes.
    * @default true
-   * @description Before an application obtains changes by using CHANGETABLE(CHANGES ...), the application must validate the value for last_synchronization_version that it plans to pass to CHANGETABLE(CHANGES ...). If the value of last_synchronization_version is not valid, that application must reinitialize all the data. [Reference](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#validating-the-last-synchronized-version)
+   * @behavior throws error if version is not valid
+   * @description
+   * - If set to true, will check the validity if version number before query for changes.
+   * - Before an application obtains changes by using CHANGETABLE(CHANGES ...), the application must validate the value for last_synchronization_version that it plans to pass to CHANGETABLE(CHANGES ...). If the value of last_synchronization_version is not valid, that application must reinitialize all the data. [Reference](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#validating-the-last-synchronized-version)
+   * @steps To obtain data inside a snapshot transaction, perform the following steps: ([Reference](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#using-snapshot-isolation))
+   * 1. Set the transaction isolation level to snapshot and start a transaction.
+   * 1. Validate the last synchronization version by using CHANGE_TRACKING_MIN_VALID_VERSION().
+   * 1. Obtain the version to be used the next time by using CHANGE_TRACKING_CURRENT_VERSION().
+   * 1. Obtain the changes for the table by using CHANGETABLE(CHANGES ...)
+   * 1. Commit the transaction.
    */
   safeRun?: boolean;
 };
@@ -22,9 +35,14 @@ type CtChangesAllFieldsOutput = {
   [targetTableFields: string]: any;
 };
 
+export type ValidResult<TargetTableFields> = {
+  currentVersion: string;
+  changes: Array<CtChangesAllFieldsOutput & TargetTableFields>;
+};
+
 /**
  * @returns changes since specific version number including target table fields
- * @description This rowset function is used to query for change information. The function queries the data stored in the internal change tracking tables. The function returns a results set that contains the primary keys of rows that have changed together with other change information such as the operation, columns updated and version for the row.
+ * @description This row-set function is used to query for change information. The function queries the data stored in the internal change tracking tables. The function returns a results set that contains the primary keys of rows that have changed together with other change information such as the operation, columns updated and version for the row.
  */
 export async function ctChangesAllFields<TargetTableFields>({
   pool,
@@ -34,9 +52,7 @@ export async function ctChangesAllFields<TargetTableFields>({
   dbName,
   primaryKeys,
   safeRun,
-}: CtChangesAllFieldsInput): Promise<
-  Array<CtChangesAllFieldsOutput & TargetTableFields>
-> {
+}: CtChangesAllFieldsInput): Promise<ValidResult<TargetTableFields>> {
   writeLog(`ctChangesAllFields`, { level: "trace" });
 
   // set default value for flag.
@@ -46,38 +62,35 @@ export async function ctChangesAllFields<TargetTableFields>({
   }
 
   if (safeRunFlag) {
-    const isVersionValid = await ctIsVersionValid({
-      pool,
-      versionNumber: sinceVersion,
-      schema,
-      dbName,
+    const query = ctChangesSafeQuery({
+      sinceVersion,
       tableName,
+      dbName,
+      schema,
+      changeQuery: ctChangesAllFieldsQuery({
+        sinceVersion,
+        tableName,
+        schema,
+        primaryKeys,
+      }),
     });
 
-    if (isVersionValid) {
-      return pool
-        .request()
-        .query(
-          ctChangesAllFieldsQuery({
-            tableName,
-            sinceVersion,
-            primaryKeys,
-          }),
-        )
-        .then((result) => result.recordset);
-    }
-    // throw error because version is not valid!
-    const minValidVersion = await ctMinValidVersion({
-      pool,
-      dbName,
-      schema,
-      tableName,
-    });
-    throw new Error(
-      `version ${sinceVersion} is not valid. minimum valid version number is ${minValidVersion}`,
-    );
-  } else {
     return pool
+      .request()
+      .query(query)
+      .then((result) => {
+        if (result.recordset[0].error) {
+          throw new Error(result.recordset[0].error);
+        }
+        return {
+          currentVersion: result.recordsets[0][0]["current_version"],
+          changes: result.recordsets[1],
+        };
+      });
+  } else {
+    const currentVersion = await ctCurrentVersion({ pool, dbName });
+
+    const changes = await pool
       .request()
       .query(
         ctChangesAllFieldsQuery({
@@ -87,6 +100,8 @@ export async function ctChangesAllFields<TargetTableFields>({
         }),
       )
       .then((result) => result.recordset);
+
+    return { currentVersion, changes };
   }
 }
 
