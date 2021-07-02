@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.7.0](https://github.com/saostad/mssql-change-tracking/compare/v0.6.0...v0.7.0)
+
+> 2 July 2021
+
+- feat: safeRun flag for ctChanges finished. [`02235d7`](https://github.com/saostad/mssql-change-tracking/commit/02235d7eb491b809a8c923e2afa2208f3a1d6407)
+- pub: v 0.7.0 [`4efdd42`](https://github.com/saostad/mssql-change-tracking/commit/4efdd4275a6e91309fff41ed5c31975754bf67df)
+- feat: snapshot isolation manage funcs added [`6fe7550`](https://github.com/saostad/mssql-change-tracking/commit/6fe7550696d9f4e67a76ae3b1ec831cc3c705ab9)
+
 #### [v0.6.0](https://github.com/saostad/mssql-change-tracking/compare/v0.5.0...v0.6.0)
 
 > 1 July 2021
