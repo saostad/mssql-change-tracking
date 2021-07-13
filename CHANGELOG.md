@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.9.0](https://github.com/saostad/mssql-change-tracking/compare/v0.8.0...v0.9.0)
+
+> 13 July 2021
+
+- pkg: updated [`66261b5`](https://github.com/saostad/mssql-change-tracking/commit/66261b5a0f1d6dbabbccfe6fb19b9dba500b9f18)
+- fix: change tracking for all fields select query include duplicate primary keys [`838ad57`](https://github.com/saostad/mssql-change-tracking/commit/838ad578cc1f39b7dfc4e50c963026cb45a9eebe)
+- doc: change log [`9df8830`](https://github.com/saostad/mssql-change-tracking/commit/9df8830f8293a810ff328a3bdbcfc98114978079)
+
 #### [v0.8.0](https://github.com/saostad/mssql-change-tracking/compare/v0.7.0...v0.8.0)
 
 > 2 July 2021
