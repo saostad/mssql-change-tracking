@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.9.1](https://github.com/saostad/mssql-change-tracking/compare/v0.9.0...v0.9.1)
+
+> 13 July 2021
+
+- fix: bug in change tracking all fields generated query [`2a5f9ee`](https://github.com/saostad/mssql-change-tracking/commit/2a5f9ee95c3f2a73d111bdafc1f1defd85be3b1a)
+- doc: change log [`b360e5e`](https://github.com/saostad/mssql-change-tracking/commit/b360e5e00a53a0b57dd527cbf8bfa7f206e94422)
+
 #### [v0.9.0](https://github.com/saostad/mssql-change-tracking/compare/v0.8.0...v0.9.0)
 
 > 13 July 2021
