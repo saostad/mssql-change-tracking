@@ -116,7 +116,12 @@ export function ctChangesAllFieldsQuery({
 }: QueryInput): string {
   const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
-  let query = `SELECT *  
+  let query = `SELECT SELECT ct.SYS_CHANGE_VERSION
+  ,ct.SYS_CHANGE_CREATION_VERSION
+  ,ct.SYS_CHANGE_OPERATION
+  ,ct.SYS_CHANGE_COLUMNS
+  ,ct.SYS_CHANGE_CONTEXT
+  ,${tableFullPath}.*
   FROM CHANGETABLE (CHANGES ${tableFullPath}, ${sinceVersion}) as ct
   LEFT JOIN ${tableFullPath} ON ct.[${primaryKeys[0]}] = ${tableFullPath}.[${primaryKeys[0]}]`;
 
