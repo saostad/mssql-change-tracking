@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.10.0](https://github.com/saostad/mssql-change-tracking/compare/v0.9.1...v0.10.0)
+
+> 14 July 2021
+
+- feat: added whereRaw property for change tracking all fields func [`634a6de`](https://github.com/saostad/mssql-change-tracking/commit/634a6de355dd3bb0c9d2e2228935257702b8aa25)
+- doc: change log [`165ea01`](https://github.com/saostad/mssql-change-tracking/commit/165ea01ffae8f99a5f00e865737e8485297c1c44)
+
 #### [v0.9.1](https://github.com/saostad/mssql-change-tracking/compare/v0.9.0...v0.9.1)
 
 > 13 July 2021
