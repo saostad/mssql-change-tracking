@@ -106,6 +106,8 @@ type QueryInput = {
   tableName: string;
   primaryKeys: string[];
   sinceVersion: string;
+  /** whatever you put here, I add at the end of sql query! `WHERE ${whereRaw}`*/
+  whereRaw?: string;
 };
 export function ctChangesAllFieldsQuery({
   schema,
@@ -113,6 +115,7 @@ export function ctChangesAllFieldsQuery({
   tableName,
   primaryKeys,
   sinceVersion,
+  whereRaw,
 }: QueryInput): string {
   const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
@@ -129,6 +132,10 @@ export function ctChangesAllFieldsQuery({
     query = query.concat(
       ` AND ct.[${primaryKeys[i]}] = ${tableFullPath}.[${primaryKeys[i]}]`,
     );
+  }
+
+  if (whereRaw) {
+    query = query.concat(`WHERE ${whereRaw}`);
   }
 
   if (dbName) {
