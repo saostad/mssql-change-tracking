@@ -119,7 +119,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-access-grant.ts#L10">services/change-tracking/manage/change-tracking-access-grant.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-access-grant.ts#L10">services/change-tracking/manage/change-tracking-access-grant.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -147,7 +147,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-access-grant.ts#L31">services/change-tracking/manage/change-tracking-access-grant.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-access-grant.ts#L31">services/change-tracking/manage/change-tracking-access-grant.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -170,7 +170,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-access-status.ts#L59">services/change-tracking/manage/change-tracking-access-status.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-access-status.ts#L59">services/change-tracking/manage/change-tracking-access-status.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -194,7 +194,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-access-status.ts#L81">services/change-tracking/manage/change-tracking-access-status.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-access-status.ts#L81">services/change-tracking/manage/change-tracking-access-status.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -218,7 +218,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/changes/change-tracking-changes.ts#L44">services/change-tracking/changes/change-tracking-changes.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/changes/change-tracking-changes.ts#L44">services/change-tracking/changes/change-tracking-changes.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -255,7 +255,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/changes/change-tracking-changes-all-fields.ts#L42">services/change-tracking/changes/change-tracking-changes-all-fields.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/changes/change-tracking-changes-all-fields.ts#L42">services/change-tracking/changes/change-tracking-changes-all-fields.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -292,9 +292,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/changes/change-tracking-changes-all-fields.ts#L112">services/change-tracking/changes/change-tracking-changes-all-fields.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/changes/change-tracking-changes-all-fields.ts#L116">services/change-tracking/changes/change-tracking-changes-all-fields.ts:116</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description</dt>
+									<dd><p>it returns change tracking fields plus all target table fields</p>
+									</dd>
+									<dt>note</dt>
+									<dd><p>it adds primary keys with &#39;PRIMARYKEY_&#39; prefix so if target table has &#39;KeyID&#39; as primary key the result will include &#39;PRIMARYKEY_KeyID&#39; as a field. <code>ct.[${primaryKeyName}] as PRIMARYKEY_${primaryKeyName}</code></p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -315,7 +325,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/changes/change-tracking-changes.ts#L106">services/change-tracking/changes/change-tracking-changes.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/changes/change-tracking-changes.ts#L106">services/change-tracking/changes/change-tracking-changes.ts:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -348,7 +358,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/changes/change-tracking-changes.ts#L130">services/change-tracking/changes/change-tracking-changes.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/changes/change-tracking-changes.ts#L130">services/change-tracking/changes/change-tracking-changes.ts:130</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -385,7 +395,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-current-version.ts#L10">services/change-tracking/version/change-tracking-current-version.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-current-version.ts#L10">services/change-tracking/version/change-tracking-current-version.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -415,7 +425,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-current-version.ts#L26">services/change-tracking/version/change-tracking-current-version.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-current-version.ts#L26">services/change-tracking/version/change-tracking-current-version.ts:26</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -445,7 +455,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-db-disable.ts#L11">services/change-tracking/manage/change-tracking-db-disable.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-db-disable.ts#L11">services/change-tracking/manage/change-tracking-db-disable.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -473,7 +483,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-db-disable.ts#L21">services/change-tracking/manage/change-tracking-db-disable.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-db-disable.ts#L21">services/change-tracking/manage/change-tracking-db-disable.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -496,7 +506,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-db-enable.ts#L16">services/change-tracking/manage/change-tracking-db-enable.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-db-enable.ts#L16">services/change-tracking/manage/change-tracking-db-enable.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -524,7 +534,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-db-enable.ts#L43">services/change-tracking/manage/change-tracking-db-enable.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-db-enable.ts#L43">services/change-tracking/manage/change-tracking-db-enable.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -547,7 +557,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-db-status.ts#L20">services/change-tracking/manage/change-tracking-db-status.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-db-status.ts#L20">services/change-tracking/manage/change-tracking-db-status.ts:20</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -570,7 +580,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-db-status.ts#L35">services/change-tracking/manage/change-tracking-db-status.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-db-status.ts#L35">services/change-tracking/manage/change-tracking-db-status.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -600,7 +610,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-is-version-valid.ts#L29">services/change-tracking/version/change-tracking-is-version-valid.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-is-version-valid.ts#L29">services/change-tracking/version/change-tracking-is-version-valid.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -636,7 +646,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts#L10">services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts#L10">services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -669,7 +679,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts#L31">services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts#L31">services/change-tracking/version/change-tracking-is-version-valid-all-tables.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -692,7 +702,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-is-version-valid.ts#L69">services/change-tracking/version/change-tracking-is-version-valid.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-is-version-valid.ts#L69">services/change-tracking/version/change-tracking-is-version-valid.ts:69</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -715,7 +725,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-is-version-valid.ts#L96">services/change-tracking/version/change-tracking-is-version-valid.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-is-version-valid.ts#L96">services/change-tracking/version/change-tracking-is-version-valid.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -738,7 +748,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L25">services/change-tracking/version/change-tracking-min-valid-version.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L25">services/change-tracking/version/change-tracking-min-valid-version.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -771,7 +781,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L82">services/change-tracking/version/change-tracking-min-valid-version.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L82">services/change-tracking/version/change-tracking-min-valid-version.ts:82</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -794,7 +804,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L63">services/change-tracking/version/change-tracking-min-valid-version.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/version/change-tracking-min-valid-version.ts#L63">services/change-tracking/version/change-tracking-min-valid-version.ts:63</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -817,7 +827,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-table-disable.ts#L11">services/change-tracking/manage/change-tracking-table-disable.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-table-disable.ts#L11">services/change-tracking/manage/change-tracking-table-disable.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -845,7 +855,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-table-disable.ts#L31">services/change-tracking/manage/change-tracking-table-disable.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-table-disable.ts#L31">services/change-tracking/manage/change-tracking-table-disable.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -868,7 +878,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-table-enable.ts#L11">services/change-tracking/manage/change-tracking-table-enable.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-table-enable.ts#L11">services/change-tracking/manage/change-tracking-table-enable.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -896,7 +906,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-table-enable.ts#L42">services/change-tracking/manage/change-tracking-table-enable.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-table-enable.ts#L42">services/change-tracking/manage/change-tracking-table-enable.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -919,7 +929,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-table-status.ts#L17">services/change-tracking/manage/change-tracking-table-status.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-table-status.ts#L17">services/change-tracking/manage/change-tracking-table-status.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -942,7 +952,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/change-tracking-table-status.ts#L35">services/change-tracking/manage/change-tracking-table-status.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/change-tracking-table-status.ts#L35">services/change-tracking/manage/change-tracking-table-status.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -976,7 +986,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/general/primary-keys.ts#L11">services/general/primary-keys.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/general/primary-keys.ts#L11">services/general/primary-keys.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -999,7 +1009,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/snapshot-isolation-disable.ts#L11">services/change-tracking/manage/snapshot-isolation-disable.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/snapshot-isolation-disable.ts#L11">services/change-tracking/manage/snapshot-isolation-disable.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1027,7 +1037,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/snapshot-isolation-disable.ts#L21">services/change-tracking/manage/snapshot-isolation-disable.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/snapshot-isolation-disable.ts#L21">services/change-tracking/manage/snapshot-isolation-disable.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1050,7 +1060,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/snapshot-isolation-enable.ts#L11">services/change-tracking/manage/snapshot-isolation-enable.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/snapshot-isolation-enable.ts#L11">services/change-tracking/manage/snapshot-isolation-enable.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1078,7 +1088,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/snapshot-isolation-enable.ts#L21">services/change-tracking/manage/snapshot-isolation-enable.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/snapshot-isolation-enable.ts#L21">services/change-tracking/manage/snapshot-isolation-enable.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1101,7 +1111,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/snapshot-isolation-status.ts#L15">services/change-tracking/manage/snapshot-isolation-status.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/snapshot-isolation-status.ts#L15">services/change-tracking/manage/snapshot-isolation-status.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1129,7 +1139,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/165ea01/src/services/change-tracking/manage/snapshot-isolation-status.ts#L27">services/change-tracking/manage/snapshot-isolation-status.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/saostad/mssql-change-tracking/blob/0fbb28c/src/services/change-tracking/manage/snapshot-isolation-status.ts#L27">services/change-tracking/manage/snapshot-isolation-status.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

@@ -109,6 +109,10 @@ type QueryInput = {
   /** whatever you put here, I add at the end of sql query! `WHERE ${whereRaw}`*/
   whereRaw?: string;
 };
+/**
+ * @description it returns change tracking fields plus all target table fields
+ * @note it adds primary keys with 'PRIMARYKEY_' prefix so if target table has 'KeyID' as primary key the result will include 'PRIMARYKEY_KeyID' as a field. `ct.[${primaryKeyName}] as PRIMARYKEY_${primaryKeyName}`
+ */
 export function ctChangesAllFieldsQuery({
   schema,
   dbName,
@@ -119,14 +123,29 @@ export function ctChangesAllFieldsQuery({
 }: QueryInput): string {
   const tableFullPath = getTableFullPath({ tableName, schema, dbName });
 
+  /**@step select part */
   let query = `SELECT ct.SYS_CHANGE_VERSION 
   ,ct.SYS_CHANGE_CREATION_VERSION 
   ,ct.SYS_CHANGE_OPERATION 
   ,ct.SYS_CHANGE_COLUMNS 
   ,ct.SYS_CHANGE_CONTEXT 
-  ,${tableFullPath}.* 
-  FROM CHANGETABLE (CHANGES ${tableFullPath}, ${sinceVersion}) as ct
-  LEFT JOIN ${tableFullPath} ON ct.[${primaryKeys[0]}] = ${tableFullPath}.[${primaryKeys[0]}]`;
+  ,${tableFullPath}.*`;
+
+  primaryKeys.forEach((primaryKeyName) => {
+    query = query.concat(
+      `,ct.[${primaryKeyName}] as PRIMARYKEY_${primaryKeyName}`,
+    );
+  });
+
+  /**@step from part */
+  query = query.concat(
+    ` FROM CHANGETABLE (CHANGES ${tableFullPath}, ${sinceVersion}) as ct`,
+  );
+
+  /**@step join part */
+  query = query.concat(
+    ` LEFT JOIN ${tableFullPath} ON ct.[${primaryKeys[0]}] = ${tableFullPath}.[${primaryKeys[0]}]`,
+  );
 
   for (let i = 1; i < primaryKeys.length; i++) {
     query = query.concat(
@@ -134,8 +153,9 @@ export function ctChangesAllFieldsQuery({
     );
   }
 
+  /**@step where part */
   if (whereRaw) {
-    query = query.concat(`WHERE ${whereRaw}`);
+    query = query.concat(` WHERE ${whereRaw}`);
   }
 
   if (dbName) {
