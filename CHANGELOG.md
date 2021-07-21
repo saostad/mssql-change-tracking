@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.11.0](https://github.com/saostad/mssql-change-tracking/compare/v0.10.0...v0.11.0)
+
+> 21 July 2021
+
+- feat: it adds primary keys with 'PRIMARYKEY_' prefix [`b478d85`](https://github.com/saostad/mssql-change-tracking/commit/b478d85c8a6daa7343dd06416f2da45aafb2b9c5)
+- doc: change log [`0fbb28c`](https://github.com/saostad/mssql-change-tracking/commit/0fbb28ccf6afb2afb7e86c3add50ef10f01553a9)
+
 #### [v0.10.0](https://github.com/saostad/mssql-change-tracking/compare/v0.9.1...v0.10.0)
 
 > 14 July 2021
