@@ -1,245 +1,111 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>mssql-change-tracking</title>
-	<meta name="description" content="Documentation for mssql-change-tracking">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script async src="assets/js/search.js" id="search-script"></script>
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">mssql-change-tracking</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<h1>mssql-change-tracking</h1>
-		</div>
-	</div>
-</header>
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>mssql-change-tracking</title><meta name="description" content="Documentation for mssql-change-tracking"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="" class="title">mssql-change-tracking</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
 <div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#ms-sql-server-change-tracking-functions" id="ms-sql-server-change-tracking-functions" style="color: inherit; text-decoration: none;">
-					<h1>MS SQL server change tracking functions</h1>
-				</a>
-				<p>This node.js module written in Typescript and uses <a href="https://www.npmjs.com/package/mssql">mssql</a> under the hood to run the sql commands and provide high level functions to manage and work with MS SQL Change Tracking.</p>
-				<a href="#docs" id="docs" style="color: inherit; text-decoration: none;">
-					<h2>Docs</h2>
-				</a>
-				<ul>
-					<li>Module docs <a href="https://saostad.github.io/mssql-change-tracking/">here</a></li>
-					<li>Microsoft docs <a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15">here</a></li>
-				</ul>
-				<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
-					<h2>How to use</h2>
-				</a>
-				<p><code>npm i mssql mssql-change-tracking</code></p>
-				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">ctDbStatus</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;mssql-change-tracking&quot;</span><span style="color: #000000">;</span>
-<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">sql</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;mssql&quot;</span><span style="color: #000000">;</span>
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<h2>mssql-change-tracking</h2></div>
+<div class="tsd-panel tsd-typography">
+<a href="#ms-sql-server-change-tracking-functions" id="ms-sql-server-change-tracking-functions" style="color: inherit; text-decoration: none;">
+  <h1>MS SQL server change tracking functions</h1>
+</a>
+<p>This node.js module written in Typescript and uses <a href="https://www.npmjs.com/package/mssql">mssql</a> under the hood to run the sql commands and provide high level functions to manage and work with MS SQL Change Tracking.</p>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">pool</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">sql</span><span style="color: #000000">.</span><span style="color: #795E26">ConnectionPool</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #001080">server:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;xxxx&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">user:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;xxxx&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;xxxx&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">database:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;MY_DB_NAME&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">});</span>
+<a href="#docs" id="docs" style="color: inherit; text-decoration: none;">
+  <h2>Docs</h2>
+</a>
+<ul>
+<li>Module docs <a href="https://saostad.github.io/mssql-change-tracking/">here</a></li>
+<li>Microsoft docs <a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15">here</a></li>
+</ul>
 
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">pool</span><span style="color: #000000">.</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
-
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">status</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">ctDbStatus</span><span style="color: #000000">({ </span><span style="color: #001080">dbName:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;MY_DB_NAME&quot;</span><span style="color: #000000">, </span><span style="color: #001080">pool</span><span style="color: #000000"> });</span>
-<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">status</span><span style="color: #000000">);</span>
+<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
+  <h2>How to use</h2>
+</a>
+<p><code>npm i mssql mssql-change-tracking</code></p>
+<pre><code class="language-ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">ctDbStatus</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&quot;mssql-change-tracking&quot;</span><span class="hl-1">;</span><br/><span class="hl-0">import</span><span class="hl-1"> </span><span class="hl-2">sql</span><span class="hl-1"> </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&quot;mssql&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">pool</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-2">sql</span><span class="hl-1">.</span><span class="hl-6">ConnectionPool</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-2">server:</span><span class="hl-1"> </span><span class="hl-3">&quot;xxxx&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">user:</span><span class="hl-1"> </span><span class="hl-3">&quot;xxxx&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">password:</span><span class="hl-1"> </span><span class="hl-3">&quot;xxxx&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">database:</span><span class="hl-1"> </span><span class="hl-3">&quot;MY_DB_NAME&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-0">await</span><span class="hl-1"> </span><span class="hl-2">pool</span><span class="hl-1">.</span><span class="hl-6">connect</span><span class="hl-1">();</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">status</span><span class="hl-1"> = </span><span class="hl-0">await</span><span class="hl-1"> </span><span class="hl-6">ctDbStatus</span><span class="hl-1">({ </span><span class="hl-2">dbName:</span><span class="hl-1"> </span><span class="hl-3">&quot;MY_DB_NAME&quot;</span><span class="hl-1">, </span><span class="hl-2">pool</span><span class="hl-1"> });</span><br/><span class="hl-2">console</span><span class="hl-1">.</span><span class="hl-6">log</span><span class="hl-1">(</span><span class="hl-2">status</span><span class="hl-1">);</span>
 </code></pre>
-				<a href="#note-to-begin" id="note-to-begin" style="color: inherit; text-decoration: none;">
-					<h2>Note to begin</h2>
-				</a>
-				<p>Before an application can obtain changes for the first time, the application must send a query to obtain the initial data and the synchronization version. The application must obtain the appropriate data directly from the table, and then use CHANGE_TRACKING_CURRENT_VERSION() to obtain the initial version. This version will be passed to CHANGETABLE(CHANGES ...) the first time that changes are obtained.</p>
-				<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
-					<h3>TODO</h3>
-				</a>
-				<ul>
-					<li><input disabled="" type="checkbox"> <a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#using-column-tracking">Column Tracking</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="modules.html">Exports</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctAccessGrant" class="tsd-kind-icon">ct<wbr>Access<wbr>Grant</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctAccessGrantQuery" class="tsd-kind-icon">ct<wbr>Access<wbr>Grant<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctAccessStatus" class="tsd-kind-icon">ct<wbr>Access<wbr>Status</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctAccessStatusQuery" class="tsd-kind-icon">ct<wbr>Access<wbr>Status<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter">
-						<a href="modules.html#ctChanges" class="tsd-kind-icon">ct<wbr>Changes</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter">
-						<a href="modules.html#ctChangesAllFields" class="tsd-kind-icon">ct<wbr>Changes<wbr>All<wbr>Fields</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctChangesAllFieldsQuery" class="tsd-kind-icon">ct<wbr>Changes<wbr>All<wbr>Fields<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctChangesQuery" class="tsd-kind-icon">ct<wbr>Changes<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctChangesSafeQuery" class="tsd-kind-icon">ct<wbr>Changes<wbr>Safe<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctCurrentVersion" class="tsd-kind-icon">ct<wbr>Current<wbr>Version</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctCurrentVersionQuery" class="tsd-kind-icon">ct<wbr>Current<wbr>Version<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctDbDisable" class="tsd-kind-icon">ct<wbr>DbDisable</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctDbDisableQuery" class="tsd-kind-icon">ct<wbr>DbDisable<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctDbEnable" class="tsd-kind-icon">ct<wbr>DbEnable</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctDbEnableQuery" class="tsd-kind-icon">ct<wbr>DbEnable<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctDbStatus" class="tsd-kind-icon">ct<wbr>DbStatus</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctDbStatusQuery" class="tsd-kind-icon">ct<wbr>DbStatus<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctIsVersionValid" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctIsVersionValidAllTables" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>All<wbr>Tables</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctIsVersionValidAllTablesQuery" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>All<wbr>Tables<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctIsVersionValidByTableIdQuery" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>ByTable<wbr>IdQuery</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctIsVersionValidByTableNameQuery" class="tsd-kind-icon">ct<wbr>IsVersion<wbr>Valid<wbr>ByTable<wbr>Name<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctMinValidVersion" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctMinValidVersionByTableIdQuery" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version<wbr>ByTable<wbr>IdQuery</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctMinValidVersionByTableNameQuery" class="tsd-kind-icon">ct<wbr>Min<wbr>Valid<wbr>Version<wbr>ByTable<wbr>Name<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctTableDisable" class="tsd-kind-icon">ct<wbr>Table<wbr>Disable</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctTableDisableQuery" class="tsd-kind-icon">ct<wbr>Table<wbr>Disable<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctTableEnable" class="tsd-kind-icon">ct<wbr>Table<wbr>Enable</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctTableEnableQuery" class="tsd-kind-icon">ct<wbr>Table<wbr>Enable<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctTablesStatus" class="tsd-kind-icon">ct<wbr>Tables<wbr>Status</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#ctTablesStatusQuery" class="tsd-kind-icon">ct<wbr>Tables<wbr>Status<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#getPrimaryKeys" class="tsd-kind-icon">get<wbr>Primary<wbr>Keys</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#siDbDisable" class="tsd-kind-icon">si<wbr>DbDisable</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#siDbDisableQuery" class="tsd-kind-icon">si<wbr>DbDisable<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#siDbEnable" class="tsd-kind-icon">si<wbr>DbEnable</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#siDbEnableQuery" class="tsd-kind-icon">si<wbr>DbEnable<wbr>Query</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#siStatus" class="tsd-kind-icon">si<wbr>Status</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#siStatusQuery" class="tsd-kind-icon">si<wbr>Status<wbr>Query</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-		</div>
-	</div>
-</footer>
+
+<a href="#note-to-begin" id="note-to-begin" style="color: inherit; text-decoration: none;">
+  <h2>Note to begin</h2>
+</a>
+<p>Before an application can obtain changes for the first time, the application must send a query to obtain the initial data and the synchronization version. The application must obtain the appropriate data directly from the table, and then use CHANGE_TRACKING_CURRENT_VERSION() to obtain the initial version. This version will be passed to CHANGETABLE(CHANGES ...) the first time that changes are obtained.</p>
+
+<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
+  <h3>TODO</h3>
+</a>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/work-with-change-tracking-sql-server?view=sql-server-ver15#using-column-tracking">Column Tracking</a></li>
+</ul>
+</div></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current selected"><a href="modules.html">mssql-<wbr/>change-<wbr/>tracking</a>
+<ul></ul></li></ul></div></details></nav>
+<nav class="tsd-navigation secondary menu-sticky">
+<ul>
+<li class="tsd-kind-function"><a href="functions/ctAccessGrant.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-64-path"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)" id="icon-64-text"></path></svg>ct<wbr/>Access<wbr/>Grant</a></li>
+<li class="tsd-kind-function"><a href="functions/ctAccessGrantQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Access<wbr/>Grant<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctAccessStatus.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Access<wbr/>Status</a></li>
+<li class="tsd-kind-function"><a href="functions/ctAccessStatusQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Access<wbr/>Status<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctChanges.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Changes</a></li>
+<li class="tsd-kind-function"><a href="functions/ctChangesAllFields.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Changes<wbr/>All<wbr/>Fields</a></li>
+<li class="tsd-kind-function"><a href="functions/ctChangesAllFieldsQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Changes<wbr/>All<wbr/>Fields<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctChangesQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Changes<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctChangesSafeQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Changes<wbr/>Safe<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctCurrentVersion.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Current<wbr/>Version</a></li>
+<li class="tsd-kind-function"><a href="functions/ctCurrentVersionQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Current<wbr/>Version<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctDbDisable.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Db<wbr/>Disable</a></li>
+<li class="tsd-kind-function"><a href="functions/ctDbDisableQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Db<wbr/>Disable<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctDbEnable.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Db<wbr/>Enable</a></li>
+<li class="tsd-kind-function"><a href="functions/ctDbEnableQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Db<wbr/>Enable<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctDbStatus.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Db<wbr/>Status</a></li>
+<li class="tsd-kind-function"><a href="functions/ctDbStatusQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Db<wbr/>Status<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctIsVersionValid.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Is<wbr/>Version<wbr/>Valid</a></li>
+<li class="tsd-kind-function"><a href="functions/ctIsVersionValidAllTables.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Is<wbr/>Version<wbr/>Valid<wbr/>All<wbr/>Tables</a></li>
+<li class="tsd-kind-function"><a href="functions/ctIsVersionValidAllTablesQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Is<wbr/>Version<wbr/>Valid<wbr/>All<wbr/>Tables<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctIsVersionValidByTableIdQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Is<wbr/>Version<wbr/>Valid<wbr/>By<wbr/>Table<wbr/>Id<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctIsVersionValidByTableNameQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Is<wbr/>Version<wbr/>Valid<wbr/>By<wbr/>Table<wbr/>Name<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctMinValidVersion.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Min<wbr/>Valid<wbr/>Version</a></li>
+<li class="tsd-kind-function"><a href="functions/ctMinValidVersionByTableIdQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Min<wbr/>Valid<wbr/>Version<wbr/>By<wbr/>Table<wbr/>Id<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctMinValidVersionByTableNameQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Min<wbr/>Valid<wbr/>Version<wbr/>By<wbr/>Table<wbr/>Name<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctTableDisable.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Table<wbr/>Disable</a></li>
+<li class="tsd-kind-function"><a href="functions/ctTableDisableQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Table<wbr/>Disable<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctTableEnable.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Table<wbr/>Enable</a></li>
+<li class="tsd-kind-function"><a href="functions/ctTableEnableQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Table<wbr/>Enable<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/ctTablesStatus.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Tables<wbr/>Status</a></li>
+<li class="tsd-kind-function"><a href="functions/ctTablesStatusQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>ct<wbr/>Tables<wbr/>Status<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/getPrimaryKeys.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>get<wbr/>Primary<wbr/>Keys</a></li>
+<li class="tsd-kind-function"><a href="functions/siDbDisable.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>si<wbr/>Db<wbr/>Disable</a></li>
+<li class="tsd-kind-function"><a href="functions/siDbDisableQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>si<wbr/>Db<wbr/>Disable<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/siDbEnable.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>si<wbr/>Db<wbr/>Enable</a></li>
+<li class="tsd-kind-function"><a href="functions/siDbEnableQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>si<wbr/>Db<wbr/>Enable<wbr/>Query</a></li>
+<li class="tsd-kind-function"><a href="functions/siStatus.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>si<wbr/>Status</a></li>
+<li class="tsd-kind-function"><a href="functions/siStatusQuery.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>si<wbr/>Status<wbr/>Query</a></li></ul></nav></div></div>
 <div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="assets/main.js"></script></body></html>

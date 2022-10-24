@@ -72,11 +72,14 @@ export async function ctChanges<PrimaryKeys>({
       .then((result) => {
         if (result.recordset[0].error) {
           throw new Error(result.recordset[0].error);
+        } else if (Array.isArray(result.recordsets)) {
+          return {
+            currentVersion: result.recordsets[0][0]["current_version"],
+            changes: result.recordsets[1],
+          };
+        } else {
+          throw new Error("query result should be array.");
         }
-        return {
-          currentVersion: result.recordsets[0][0]["current_version"],
-          changes: result.recordsets[1],
-        };
       });
   } else {
     // do not check for version validity and snapshot isolation

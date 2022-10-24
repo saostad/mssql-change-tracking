@@ -1,0 +1,92 @@
+Date : 2021-07-23 12:47:27
+Directory : c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking
+Total : 46 files,  20035 codes, 436 comments, 469 blanks, all 20940 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          4 |     14,736 |         59 |          9 |     14,804 |
+| CSS        |          1 |      2,340 |        170 |        151 |      2,661 |
+| HTML       |          2 |      1,541 |          0 |          3 |      1,544 |
+| TypeScript |         25 |      1,009 |        107 |        154 |      1,270 |
+| JavaScript |          8 |        299 |         80 |         92 |        471 |
+| Markdown   |          2 |         84 |          0 |         55 |        139 |
+| YAML       |          3 |         19 |         18 |          4 |         41 |
+| Docker     |          1 |          7 |          2 |          1 |         10 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                                    |         46 |     20,035 |        436 |        469 |     20,940 |
+| config                                                                                                                                               |          8 |        170 |         18 |         48 |        236 |
+| docs                                                                                                                                                 |          6 |      4,023 |        234 |        201 |      4,458 |
+| docs\assets                                                                                                                                          |          3 |      2,479 |        234 |        197 |      2,910 |
+| docs\assets\css                                                                                                                                      |          1 |      2,340 |        170 |        151 |      2,661 |
+| docs\assets\js                                                                                                                                       |          2 |        139 |         64 |         46 |        249 |
+| src                                                                                                                                                  |         25 |      1,009 |        107 |        154 |      1,270 |
+| src\helpers                                                                                                                                          |          1 |         53 |          3 |          6 |         62 |
+| src\services                                                                                                                                         |         20 |        944 |        104 |        144 |      1,192 |
+| src\services\change-tracking                                                                                                                         |         18 |        914 |        104 |        139 |      1,157 |
+| src\services\change-tracking\changes                                                                                                                 |          2 |        240 |         58 |         34 |        332 |
+| src\services\change-tracking\manage                                                                                                                  |         11 |        406 |         28 |         71 |        505 |
+| src\services\change-tracking\version                                                                                                                 |          4 |        251 |         18 |         33 |        302 |
+| src\services\general                                                                                                                                 |          2 |         30 |          0 |          5 |         35 |
+| src\typings                                                                                                                                          |          2 |          7 |          0 |          2 |          9 |
+| src\typings\node                                                                                                                                     |          2 |          7 |          0 |          2 |          9 |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                                             | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\.prettierrc                                                                         | JSON       |          4 |          0 |          1 |          5 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\CHANGELOG.md                                                                        | Markdown   |         60 |          0 |         41 |        101 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\README.md                                                                           | Markdown   |         24 |          0 |         14 |         38 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\config\Dockerfile                                                                   | Docker     |          7 |          2 |          1 |         10 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\config\_config.yml                                                                  | YAML       |          3 |          0 |          1 |          4 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\config\clean-start.js                                                               | JavaScript |         41 |          6 |         12 |         59 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\config\compile.js                                                                   | JavaScript |         22 |          0 |          4 |         26 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\config\docker-build.js                                                              | JavaScript |         53 |         10 |         17 |         80 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\config\github.js                                                                    | JavaScript |          8 |          0 |          4 |         12 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\config\tag.js                                                                       | JavaScript |         21 |          0 |          5 |         26 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\config\vulnerability-scan.js                                                        | JavaScript |         15 |          0 |          4 |         19 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\docker-compose.yml                                                                  | YAML       |         13 |         18 |          2 |         33 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\docs\_config.yml                                                                    | YAML       |          3 |          0 |          1 |          4 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\docs\assets\css\main.css                                                            | CSS        |      2,340 |        170 |        151 |      2,661 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\docs\assets\js\main.js                                                              | JavaScript |        138 |         64 |         46 |        248 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\docs\assets\js\search.js                                                            | JavaScript |          1 |          0 |          0 |          1 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\docs\index.html                                                                     | HTML       |        242 |          0 |          3 |        245 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\docs\modules.html                                                                   | HTML       |      1,299 |          0 |          0 |      1,299 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\package-lock.json                                                                   | JSON       |     14,624 |          0 |          1 |     14,625 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\package.json                                                                        | JSON       |         89 |         15 |          1 |        105 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\helpers\util.ts                                                                 | TypeScript |         53 |          3 |          6 |         62 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\index.test.ts                                                                   | TypeScript |          3 |          0 |          1 |          4 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\index.ts                                                                        | TypeScript |          2 |          0 |          1 |          3 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\changes\change-tracking-changes-all-fields.ts          | TypeScript |        121 |         27 |         18 |        166 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\changes\change-tracking-changes.ts                     | TypeScript |        119 |         31 |         16 |        166 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\index.ts                                               | TypeScript |         17 |          0 |          1 |         18 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\change-tracking-access-grant.ts                 | TypeScript |         38 |          1 |          7 |         46 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\change-tracking-access-status.ts                | TypeScript |         81 |          7 |          7 |         95 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\change-tracking-db-disable.ts                   | TypeScript |         19 |          1 |          5 |         25 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\change-tracking-db-enable.ts                    | TypeScript |         47 |          1 |          7 |         55 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\change-tracking-db-status.ts                    | TypeScript |         32 |          3 |          5 |         40 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\change-tracking-table-disable.ts                | TypeScript |         37 |          1 |          8 |         46 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\change-tracking-table-enable.ts                 | TypeScript |         50 |          4 |         10 |         64 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\change-tracking-table-status.ts                 | TypeScript |         31 |          7 |          5 |         43 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\snapshot-isolation-disable.ts                   | TypeScript |         19 |          1 |          5 |         25 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\snapshot-isolation-enable.ts                    | TypeScript |         19 |          1 |          5 |         25 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\manage\snapshot-isolation-status.ts                    | TypeScript |         33 |          1 |          7 |         41 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\version\change-tracking-current-version.ts             | TypeScript |         24 |          4 |          7 |         35 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\version\change-tracking-is-version-valid-all-tables.ts | TypeScript |         42 |          4 |          6 |         52 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\version\change-tracking-is-version-valid.ts            | TypeScript |        105 |          6 |         10 |        121 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\change-tracking\version\change-tracking-min-valid-version.ts           | TypeScript |         80 |          4 |         10 |         94 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\general\index.ts                                                       | TypeScript |          1 |          0 |          1 |          2 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\services\general\primary-keys.ts                                                | TypeScript |         29 |          0 |          4 |         33 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\typings\node\mode.ts                                                            | TypeScript |          1 |          0 |          1 |          2 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\src\typings\node\modules.d.ts                                                       | TypeScript |          6 |          0 |          1 |          7 |
+| c:\Users\SOstad\Projects\__public-projects\mssql-change-tracking\tsconfig.json                                                                       | JSON       |         19 |         44 |          6 |         69 |
+| Total                                                                                                                                                |            |     20,035 |        436 |        469 |     20,940 |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
